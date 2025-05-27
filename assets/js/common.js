@@ -1,4 +1,4 @@
-function includeHTML() {
+function includeHTML(callback) {
   var z, i, elmnt, file, xhttp;
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
@@ -14,7 +14,7 @@ function includeHTML() {
             elmnt.parentNode.insertBefore(tempDiv.firstChild, elmnt);
           }
           elmnt.parentNode.removeChild(elmnt);
-          includeHTML();
+          includeHTML(callback);
           executeScripts(tempDiv);
         }
       };
@@ -23,6 +23,7 @@ function includeHTML() {
       return;
     }
   }
+  if (typeof callback === "function") callback();
 }
 
 function executeScripts(element) {
@@ -32,7 +33,7 @@ function executeScripts(element) {
     script.type = scripts[i].type || "text/javascript";
     if (scripts[i].src) {
       script.src = scripts[i].src;
-      script.onload = function () {};
+      script.onload = function () { };
       document.head.appendChild(script);
     } else {
       script.text = scripts[i].innerHTML;
@@ -42,10 +43,44 @@ function executeScripts(element) {
   }
 }
 
+function initSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const openButton = document.querySelector(".sidebar--open");
+  const closeButton = document.querySelector(".sidebar--close");
+  const main = document.querySelector(".main");
+
+  if (!sidebar || !openButton || !closeButton) {
+    return;
+  }
+
+  openButton.addEventListener("click", () => {
+    sidebar.classList.add("active");
+    main.classList.add("active");
+  });
+
+  closeButton.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    main.classList.remove("active");
+  });
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
-  includeHTML();
-  AOS.init({
-    duration: 1200,
-    once: true,
+  includeHTML(function () {
+    initSidebar();
+    AOS.init({
+      duration: 1200,
+      once: true,
+    });
+
+    $(window).scroll(function () {
+      var curr = $(this).scrollTop();
+
+      if (curr > 0) {
+        $(".header").addClass("scrolled");
+      } else {
+        $(".header").removeClass("scrolled");
+      }
+    });
   });
 });

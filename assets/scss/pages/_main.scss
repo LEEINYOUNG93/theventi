@@ -1,9 +1,252 @@
+.main-body {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
 
-.main{
+    &::-webkit-scrollbar-thumb {
+        background: $color-primary-1;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $color-gray-e;
+    }
+
+    &.active {
+        z-index: 1;
+    }
+}
+
+.main {
     background: $color-white;
-    border-radius: $content-border-radius;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    padding-top: $nav-height;
+    overflow: hidden;
+}
+
+.main-visual {
     position: relative;
-    top: -28px;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    .main-inner {
+        padding: 20px 16px;
+        background: $color-white;
+        border-radius: $content-border-radius;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: $color-primary;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+
+    .image-bx {
+        aspect-ratio: 328/400;
+        box-shadow: var(--box-shadow);
+        border-radius: var(--content-border-radius);
+    }
+
+    .swiper-wrapper {
+        height: auto;
+    }
+
+    .swiper-control-bx {
+        position: absolute;
+        right: 40px;
+        bottom: 40px;
+        z-index: 1;
+        text-align: right;
+        width: auto;
+        padding: 0 8px;
+        height: 22px;
+        background: rgba(#4B4B4B, 0.8);
+        border-radius: var(--content-border-radius);
+        @include flex($justify: center);
+    }
+
+    .swiper-pagination {
+        position: unset;
+        @include flex($justify: center);
+        gap: 2px;
+
+        span {
+            font-size: 12px;
+            color: rgba($color-white, 0.5);
+            font-weight: 500;
+
+            &.swiper-pagination-current {
+                color: $color-white;
+            }
+        }
+
+    }
+}
+
+.main-section {
+    &-1 {
+        .main_icon_list {
+            display: flex;
+            border: 1px solid $color-gray-e;
+            border-radius: var(--content-border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px 28.5px;
+
+            li {
+                flex: 1;
+            }
+
+            a {
+                @include flex($justify: center, $direction: column);
+                text-align: center;
+            }
+
+            p {
+                margin-top: 8px;
+                line-height: 1;
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+                object-fit: scale-down;
+            }
+        }
+    }
+
+    &-2 {
+        margin: 40px 0;
+
+        .coupon-list {
+            margin-top: var(--common-gap);
+            padding: 24px;
+            border: 1px solid $color-gray-e;
+            border-radius: var(--content-border-radius);
+        }
+
+        .coupon-img {
+            @include flex($justify: center);
+            aspect-ratio: 288/117;
+            margin: 24px 0;
+        }
+
+        .download-bx {
+            @include flex($justify: center);
+            gap: 8px;
+            background: rgba(#7B00A0, 0.16);
+            height: 48px;
+            border-radius: var(--border-radius-small);
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+
+    &-3 {
+        padding-bottom: 40px;
+        .event-list {
+            li+li {
+                margin-top: 40px;
+            }
+
+            a {
+                @include flex($justify: space-between);
+                padding: 29.5px 17px 29.5px 24px;
+                border-radius: var(--content-border-radius);
+                box-shadow: var(--box-shadow);
+                margin-top: var(--common-gap);
+
+                &.box-1 {
+                    background: $color-primary-5;
+                }
+
+                &.box-2 {
+                    background: $color-primary-3;
+                }
+
+                &.box-3 {
+                    background: $color-primary-4;
+                }
+            }
+
+            .icon-bx {
+                width: 60px;
+                height: 60px;
+                @include flex($justify: center);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: scale-down;
+                }
+            }
+        }
+    }
+    &-4{
+        .top-bx{
+            @include flex($justify: space-between);
+        }
+        .location-bx{
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .bottom-bx{
+            display: flex;
+            gap: var(--common-gap);
+            padding: 16px 0 101px 0;
+        }
+
+        .fix-bx{
+            p{
+                color: rgba($color-black, 0.6);
+                text-align: center;
+            }
+        }
+
+        .more_btn{
+            @include flex($justify: center, $direction: column);
+            width: 96px;
+            height: 96px;
+            background: $color-primary-7;
+            border-radius: 50%;
+        }
+        .swiper-container{
+            width: calc(100% - 96px);
+            overflow: hidden;
+        }
+        .swiper-wrapper{
+            height: auto;
+        }
+        .swiper-slide{
+            max-width: 96px; 
+            .img-bx{
+                position: relative;
+                overflow: hidden;
+                border-radius: 50%;
+                aspect-ratio: 1/1;
+                &::after{
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background: $color-primary-6;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: -1;
+                }
+            }
+            p{
+                color: #333;
+                text-align: center;
+            }
+        }
+    }
 }

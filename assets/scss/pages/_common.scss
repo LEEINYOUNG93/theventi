@@ -1,134 +1,100 @@
-:root{
-    --color-primary: #7B00A0;
-    --font-size-20 : 20px;
-    --font-size-14 : 14px;
+:root {
+    --color-primary: $color-promary;
+    --font-size-20: 20px;
+    --font-size-18: 18px;
+    --font-size-17: 17px;
+    --font-size-16: 16px;
+    --font-size-15: 15px;
+    --font-size-14: 14px;
+    --font-size-13: 13px;
+    --font-size-12: 12px;
     --content-border-radius: 16px;
     --border-radius-small: 8px;
-}
-/*header*/
-.header {
-    position: fixed;
-    overflow: hidden;
-    width: 100%;
-    top: 0;
-    left: 0;
-    @include flex($justify: center);
-    &-inner{
-        overflow-y: auto;
-        height: 100%;
-		height: calc(100vh - #{$nav-height});
-		&::-webkit-scrollbar {
-			width: 5px;
-		}
-		&::-webkit-scrollbar-thumb {
-			background: $color-primary-1;
-		}
-	
-		&::-webkit-scrollbar-track {
-			background-color: $color-gray-e;
-		}
-    }
-    &-top {
-        @include flex($justify: space-between);
-        background: $color-primary;
-        height: $nav-height;
-    }
+    --common-gap: 16px;
+    --box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.1);
+    --drop-shadow: 0px 0px 16px 0px rgba(0,0,0,0.1);
 }
 
-.sidebar{   
-    &-header{
-        height: 64px;
-        background: $color-primary;
-    }
-    &-login{
-        padding-top: 16px;
-        background: $color-white;
-    }
-    .login-bx{
-        background: $color-primary-6;
-        border-radius: var(--border-radius-small);
-        padding: 24px;
-    }
-    .sidebar--login{
-        margin-top: 16px;
-        span{
-            @include flex($justify: center);
-            width: 70px;
-            height: 30px;
-            border-radius: 50px;
-            border: 1px solid #7B00A0;
-        }
-    }
-    .sidebar_icon_list{
-        padding: 24px 0;
-        display: flex;
-        > li{
-            flex: 1;
-            @include flex($justify: center);
-        }
-        a{
-            @include flex($justify: center);
-            flex-direction: column;
-            img{
-                width: 40px;
-                height: 40px;
-                object-fit: scale-down;
-            }
-            p{
-                margin-top: 4px;
-            }
-        }
-    }
-    &-menu{
-        background: $color-primary-6;
-        padding-top: 8px;
-    }
-    &-menu-list{
-        background: $color-white;
-        &+.sidebar-menu-list{
-            margin-top: 8px;
-        }
-        a{
-            display: block;
-            padding: 23px 0;
-            border-bottom: 1px solid $color-gray-e;
-            margin: 0 16px;
-            background-image: url(../images/main/move_btn.svg);
-            @include background($position: center right, $size: 6px 10px);
-            font-size: 15px;
-            font-weight: 500;
-            color: #291B35;
-        }
-    }
+*{
+    letter-spacing: -1px;
 }
 
 .container {
-    width: 360px;
-    padding-left: 16px;
-    padding-right: 16px;
+    max-width: 360px;
+    padding-left: var(--common-gap);
+    padding-right: var(--common-gap);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.text-center{
+    text-align: center;
 }
 
 [data-color="point_1"] {
     color: var(--color-primary);
 }
 
+[data-font="font_20"] {
+    font-size: var(--font-size-20);
+    line-height: 1;
+}
+
+[data-font="font_18"] {
+    font-size: var(--font-size-18);
+    line-height: 1;
+}
+
+[data-font="font_17"] {
+    font-size: var(--font-size-17);
+}
+
+[data-font="font_16"] {
+    font-size: var(--font-size-16);
+}
+
 [data-font="font_15"] {
-    font-size: var(--font-size-20)
+    font-size: var(--font-size-15);
 }
 
 [data-font="font_14"] {
     font-size: var(--font-size-14);
 }
 
-[data-font="font_14"] {
-    font-size: var(--font-size-14);
+[data-font="font_13"] {
+    font-size: var(--font-size-13);
+}
+
+[data-font="font_12"] {
+    font-size: var(--font-size-12);
+}
+
+[data-font-weight="bold"] {
+    font-weight: $font-weight-bold;
 }
 
 [data-font-weight="medium"] {
     font-weight: $font-weight-medium;
 }
 
-.title-1{
+.title-1 {
     color: rgba($color-black, 0.4);
     line-height: 1.2;
+}
+
+.location-txt{
+    font-size: 14px;
+    color: rgba($color-black,0.6);
+    span{
+        font-weight: $font-weight-semibold;
+    }
+}
+
+.mt-2{
+    margin-top: 8px;
+}
+
+.mt-4{
+    margin-top: 16px;
 }

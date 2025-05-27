@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="./assets/css/xeicon.css" />
     <!-- AOS -->
     <link href="./assets/css/aos.css" rel="stylesheet">
+    <!-- Swiper -->
+    <link href="./assets/css/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,13 +47,11 @@
     <title>theVenti</title>
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <script src="./assets/js/lib/jquery-3.3.1.min.js"></script>
-    <script src="./assets/js/lib/jquery-ui.min.js"></script>
-    <script src="./assets/js/lib/jquery.ui.touch-punch.min.js"></script>
     <script src="./assets/js/lib/swiper-bundle.min.js"></script>
     <script src="./assets/js/lib/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/lib/aos.min.js"></script>
     <script src="./assets/js/lib/SmoothScroll.js"></script>
-    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/common.js" defer></script>
 </head>
 
 <body class="main-body">
@@ -59,16 +59,183 @@
     <div include-html="./include/header.html"></div>
     <!-- E : 헤더-->
     <main class="main" id="contents">
-
+        <!-- S : 메인비주얼 -->
+        <section class="main-visual">
+            <div class="main-inner container">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                                <div class="image-bx">
+                                    <img src="./assets/images/main/main_slide_1.png" alt="main-visual" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                                <div class="image-bx">
+                                    <img src="./assets/images/main/main_slide_1.png" alt="main-visual" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-control-bx">
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- E : 메인비주얼 -->
+        <!-- S : 메인 아이콘 -->
+        <section class="main-section-1">
+            <div class="container">
+                <ul class="main_icon_list">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="./assets/images/main/main_icon_1.svg" alt="픽업주문" loading="lazy">
+                            <p data-font="font_14">픽업주문</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="./assets/images/main/main_icon_2.svg" alt="배달주문" loading="lazy">
+                            <p data-font="font_14">배달주문</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="./assets/images/main/main_icon_3.svg" alt="선물하기" loading="lazy">
+                            <p data-font="font_14">선물하기</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- E : 메인아이콘 -->
+        <!-- S : 오늘의쿠폰 -->
+        <section class="main-section-2">
+            <div class="container">
+                <p data-font="font_18" data-font-weight="bold">오늘의 쿠폰</p>
+                <div class="coupon-list">
+                    <p data-font="font_18" data-font-weight="bold">4월에도 맛있게 할인 받자</p>
+                    <p data-font="font_13" class="dec-1 mt-2">라떼 3종과 프라페 2종 500원 할인 쿠폰 받아가세요!</p>
+                    <div class="coupon-img">
+                        <img src="./assets/images/main/coupon-img.png" alt="쿠폰이미지" loading="lazy">
+                    </div>
+                    <div class="download-bx">
+                        <p data-font="font_14" data-font-weight="bold">쿠폰다운</p>
+                        <img src="./assets/images/main/download-icon.svg" alt="다운로드 아이콘" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- E : 오늘의쿠폰 -->
+        <!-- S : 메인이벤트 -->
+        <section class="main-section-3">
+            <div class="container">
+                <ul class="event-list">
+                    <li>
+                        <p data-font="font_16">수박 신메뉴 먹고 힙합플레이야 가자!</p>
+                        <a href="javascript:void(0);" class="box-1">
+                            <div class="txt-bx">
+                                <p data-font="font_17" data-font-weight="bold">힙합플레이야 페스티벌 이벤트</p>
+                                <p data-font="font_13" class="mt-2">신메뉴 마시고 스탬프 적립시<br>
+                                    플랫 경품 이벤트 참여권 모두에게 지급!</p>
+                            </div>
+                            <div class="icon-bx">
+                                <img src="./assets/images/main/main_icon_4.svg" alt="이벤트 아이콘" loading="lazy">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <p data-font="font_16">봄 시즌 한정 신메뉴 출시</p>
+                        <a href="javascript:void(0);" class="box-2">
+                            <div class="txt-bx">
+                                <p data-font="font_17" data-font-weight="bold">피치 블라썸 시리즈 출시 이벤트</p>
+                                <p data-font="font_13" class="mt-2">상큼한 봄 시즌 신메뉴 출시!<br>
+                                    2잔 이상 구매 시 한정판 텀블러 증정!</p>
+                            </div>
+                            <div class="icon-bx">
+                                <img src="./assets/images/main/main_icon_5.svg" alt="이벤트 아이콘" loading="lazy">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <p data-font="font_18">5월 회원 등급 혜택 이벤트</p>
+                        <a href="javascript:void(0);" class="box-3">
+                            <div class="txt-bx">
+                                <p data-font="font_17" data-font-weight="bold">골드 멤버십 고객 전용 혜택</p>
+                                <p data-font="font_13" class="mt-2">5월 한 달 동안 골드 멤버 고객님께<br>
+                                    사이즈업 무료 혜택과 적립 포인트 2배!</p>
+                            </div>
+                            <div class="icon-bx">
+                                <img src="./assets/images/main/main_icon_6.svg" alt="이벤트 아이콘" loading="lazy">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- E : 메인이벤트 -->
+        <!-- S : 추천메뉴 -->
+        <section class="main-section-4">
+            <div class="container">
+                <div class="top-bx">
+                    <p data-font="font_18" data-font-weight="bold">추천메뉴</p>
+                    <div class="location-bx">
+                        <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘" loading="lazy">
+                        <p class="location-txt">신정네거리역점 <span>291m</span></p>
+                        <img src="./assets/images/main/point-more-btn.svg" alt="위치 더보기 버튼" loading="lazy">
+                    </div>
+                </div>
+                <div class="bottom-bx">
+                    <div class="fix-bx">
+                        <a href="javascript:void(0);" class="more_btn">
+                            <img src="./assets/images/main/plus-icon.svg" alt="음료 더보기 버튼" loading="lazy">
+                        </a>
+                        <p data-font="font_12" class="mt-2">전체 메뉴 보기</p>
+                    </div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="javascript:void(0);">
+                                    <div class="img-bx">
+                                        <img src="./assets/images/main/beverage_1.png" alt="음료이름" loading="lazy">
+                                    </div>
+                                    <p data-font="font_12" class="mt-2">수박주스</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:void(0);">
+                                    <div class="img-bx">
+                                        <img src="./assets/images/main/beverage_2.png" alt="음료이름" loading="lazy">
+                                    </div>
+                                    <p data-font="font_12" class="mt-2">수박주스</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:void(0);">
+                                    <div class="img-bx">
+                                        <img src="./assets/images/main/beverage_3.png" alt="음료이름" loading="lazy">
+                                    </div>
+                                    <p data-font="font_12" class="mt-2">수박주스</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-control-bx">
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        <!-- E : 추천메뉴 -->
     </main>
 
     <!-- S : 푸터-->
-    <div include-html="/include/footer.html"></div>
+    <div include-html="./include/footer.html"></div>
     <!-- E : 푸터-->
-
-    <script>
-        
-    </script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

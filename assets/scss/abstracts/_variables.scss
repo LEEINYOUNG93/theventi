@@ -11,7 +11,7 @@ $grid-breakpoints: (
 
 $grid-columns: 12;
 $grid-gutter-width: 40px;
-$nav-height: 94px;
+$nav-height: 64px;
 
 // Color system
 $color-primary: #7B00A0;
@@ -21,6 +21,7 @@ $color-primary-3: #FBE7FD;
 $color-primary-4: #F5EEDF;
 $color-primary-5: #E8F2F4;
 $color-primary-6: #F4F4F4;
+$color-primary-7: #A166B3;
 $color-white: #ffffff;
 $color-black: #000000;
 $color-gray-e: #EEEEEE;
@@ -31,6 +32,8 @@ $color: (
     "primary-3": $color-primary-3,
     "primary-4": $color-primary-4,
     "primary-5": $color-primary-5,
+    "primary-6": $color-primary-6,
+    "primary-7": $color-primary-7,
     "white":$color-white,
     "black":$color-black,
     "gray-e":$color-gray-e,
