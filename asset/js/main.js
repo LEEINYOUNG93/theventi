@@ -1,0 +1,16 @@
+$(window).on('load', function () {
+
+   
+})
+
+
+
+
+
+
+
+
+
+
+
+

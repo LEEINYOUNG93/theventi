@@ -1,0 +1,46 @@
+.dropdown{
+    &-menu{
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 129px;
+        overflow: auto;
+        margin: 5px 0 0 -25px;
+        padding: 0;
+        border-radius: $border-radius-base;
+        border: 1px solid $color-gray-5;
+        font-size: 12px;
+        transform: rotate(-45deg);
+        color:$color-black;
+
+        &-wrp{
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: border-radius 0.5s;
+        }
+    }
+
+    &-item{    
+        padding: 8px 20px;
+        font-weight: 500;
+        line-height: 1;
+
+        a{
+            display: block;
+        }
+
+        &:focus, &:hover{
+            color: inherit;
+            background-color: $color-gray-2;
+        }
+    }
+
+    .form-control + .dropdown-menu{
+        margin: 5px 0 0;
+        padding: 10px 0;
+        max-height: 169px; 
+        border-radius: $form-control-radius;
+        border-color:transparent;
+        box-shadow:0px 5px 20px #0000001A;
+    }
+}

@@ -1,0 +1,144 @@
+.lightbox{
+    display:flex;
+    overflow:auto;
+    align-items:center;
+    position:fixed;
+    top:0 !important;
+    height:100vh;
+    padding:2rem 0;
+
+    &-Overlay{
+        position:fixed;
+        width:auto !important;
+        height:auto !important;
+        top:0;
+        right:0;
+        bottom:0;
+    }
+}
+
+.lb{
+    &-wrapper{
+        margin:auto;
+        padding:0 6.25rem;
+        
+        &>*{pointer-events:auto}
+    }
+ 
+    &-data{
+        display:flex;
+        justify-content:space-between;
+
+        &Container{
+            position:relative;
+            width:100%!important;
+        }
+
+        .lb-close{
+            width:1.875rem;
+            height:1.875rem;
+            background-size:auto 1.5rem;
+            float:none;
+            background-position:50% 50%;
+            background-image:url(../img/icon-lightbox-close.png)
+        }
+
+        .lb-details{
+            flex:1;
+            width:auto;
+        }
+    }
+
+    &-outerContainer{
+        max-width:1500px!important;
+        width:100%!important;
+        height:auto!important;
+        border-radius:0
+    }
+
+    &-nav{
+        a.lb-next, a.lb-prev{
+            background:url(../img/icon-lightbox-swiper.svg) no-repeat center right 1.5rem / auto 3rem;
+            opacity:1;
+        }
+        
+        a.lb-prev{
+            transform:scaleX(-1)
+        }
+    }
+
+    &-closeContainer{
+        display:flex;
+        flex-shrink:0;
+    }
+
+    &-image{
+        width:100% !important;
+        height:auto!important;
+        border-width: 2px !important;
+        border-radius: 0 !important;
+    }
+}
+
+.slick-lightbox {
+    @include media-max(lg){
+        .slick-lightbox-slick-item-inner{
+            max-width: 98vw !important;
+            margin-left: 1vw !important;
+        }
+
+        .slick-lightbox-close{
+            top: 10px !important;
+            right: 1vw !important;
+            font-size:13px !important;
+
+            &:before{
+                width:15px !important;
+                height:15px !important;
+            }
+        }
+
+        .slick-prev, .slick-next{
+            opacity:.5;
+        }
+    }
+}
+
+.slick-counter {
+    @include media-max(md){
+        bottom: 10px !important;
+        padding: 4px 9px !important;
+        font-size: 10px !important;
+
+        .icon-counter-split {
+            height: 7px !important;
+            margin: 4px 6px 0 !important;
+        }
+    }
+}
+
+.slick-prev, .slick-next{
+    @include media-max(md){
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        background-size: 5px auto !important;
+    }
+}
+
+.card-light-box{
+    @include make-frame(62.5%);
+
+    &:not(:first-child){
+        display:none
+    }
+
+    img{
+        transition: transform .4s;
+    }
+
+    @include hover{
+        img{
+            transform: scale(1.1)
+        }
+    }
+}

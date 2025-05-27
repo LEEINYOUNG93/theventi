@@ -1,0 +1,133 @@
+// Grid
+$grid-breakpoints: (
+    "xs": 0,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1440px
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 40px;
+
+// Color system
+$color-primary: #0369DE;
+$color-primary-dark: #0155B5;
+$color-primary-light1: #2887F3;
+$color-primary-light2: #70ACF1;
+$color-skyblue: #11CDEE;
+$color-ylw: #FFD607;
+$color-dark-pink: #D83F56;
+$color-org: #FF6F07;
+$color-dark-org: #DB610A;
+$color-mint: #58FFD5;
+$color-grn: #55C798;
+$color-secondary-grn: #11D788;
+$color-purple: #BF65D3;
+$color-dark-purple: #A949BE;
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-body: #222222;
+$color-dim: rgba(0, 0, 0, .7);
+$color-gray: #666666;
+$color-gray-1: #FAFAFA;
+$color-gray-2: #F4F4F4;
+$color-gray-3: #ECECEC;
+$color-gray-4: #DFDFDF;
+$color-gray-5: #B0B0B0;
+$color-gray-6: #9C9C9C;
+$color-gray-7: #6A6A6A;
+$color-disabled-bg: $color-gray-4;
+$color-disabled-color : #B9B9B9;
+$color-placeholder-color : #B0B0B0;
+$color-success: #2887F3;
+$color-danger: #CC2200;
+$color-warning: #FFA100;
+$color-secondary: #888;
+$color-muted: #666666;
+$color-light: #999;
+$color-red: #CC2200;
+
+$color: (
+    "primary": $color-primary,
+    "primary-dark": $color-primary-dark,
+    "primary-light1": $color-primary-light1,
+    "primary-light2": $color-primary-light2,
+    "skyblue": $color-skyblue,
+    "ylw": $color-ylw,
+    "dark-pink": $color-dark-pink,
+    "org": $color-org,
+    "dark-org": $color-dark-org,
+    "mint": $color-mint,
+    "grn": $color-grn,
+    "secondary-grn": $color-secondary-grn,
+    "purple": $color-purple,
+    "dark-purple": $color-dark-purple,
+    "white": $color-white,
+    "black": $color-black,
+    "body": $color-body,
+    "dim": $color-dim,
+    "gray": $color-gray,
+    "gray-1": $color-gray-1,
+    "gray-2": $color-gray-2,
+    "gray-3": $color-gray-3,
+    "gray-4": $color-gray-4,
+    "gray-5": $color-gray-5,
+    "gray-6": $color-gray-6,
+    "gray-7": $color-gray-7,
+    "success": $color-success,
+    "danger": $color-danger,
+    "warning": $color-warning,
+    "secondary": $color-secondary,
+    "muted": $color-muted,
+    "light": $color-light,
+    "red": $color-red,
+);
+
+// Typography
+$base-rem: 16px;
+$base-mobile-rem: 14px;
+
+$line-height-base: 1.5;
+
+$font-family-sans-serif:'SUIT', -apple-system, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-family-en: 'SUIT', -apple-system, sans-serif;
+
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-heavy: 900;
+
+$headings-font-weight: $font-weight-extrabold;
+$headings-line-height: 1.25;
+
+// animation
+$animation-timing:cubic-bezier(0.165, 0.84, 0.44, 1);
+
+// radius
+$border-radius-small: 4px;
+$border-radius-base: 8px;
+$btn-radius: 8px;
+
+// 02-14 추가
+$form-control-height: 56px;
+$form-control-padding: 16px 20px;
+$form-control-radius: $border-radius-base;
+$form-control-text: 14px;
+$form-control-text-small: 12px;
+$form-label-text: 18px;
+
+$form-group-gutter: 20px;
+
+$tab-font-size: 16px;
+
+$item-line-height-title: 1.223;
+$item-line-height-text: 1.25;
+
+$popup-header-height: 90px;

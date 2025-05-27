@@ -1,0 +1,49 @@
+[class*=list-bullet]{
+    li{
+        position: relative;
+        font-size: 1rem;
+        &:before{
+            position: absolute;
+            top: -.05em;
+            left: 0;
+        }
+        &+li{
+            margin-top:.556em;
+        }
+    }
+}
+
+.list-bullet{
+    li{
+        padding-left: .7em;
+        
+        &:before{
+            content: "*";
+            top:.12em;
+        }
+    }
+
+    &-dot{
+        li{
+            padding-left: .778em;
+            @include media-max(md){
+                padding-left:10px;
+                font-size:13px;
+            }
+
+            &:before{
+                content: "\2022";
+            }
+        }
+    }
+
+    &-dash{
+        li{
+            padding-left: .7em;
+            
+            &:before{
+                content: "-";
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+[class^=icon-]{
+    display: inline-block;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 0;
+    line-height: 0;
+    text-decoration: none;
+    vertical-align: top;
+    text-indent: -1000em;
+    outline: 0 !important;
+    @include background($position: 50% 50%, $size: auto);
+
+    $_list: 'arr', 'cover-arr', 'menu', 'close', 'user', 'back', 'srch', 'delete', 'reset', 'clear', 'download', 'masking', 'tooltip', 'alarm', 'logout', 'call', 'bookmark', 'copy';
+
+    @each $name in $_list {
+        &[class^=icon-#{$name}] {
+            background-image: url(../images/icon/icon_#{$name}.svg);
+        }
+        &[class^=icon-#{$name}].on{
+            background-image: url(../images/icon/icon_#{$name}_on.svg);
+        }
+        
+        &[class^=icon-#{$name}].sm{
+            background-image: url(../images/icon/icon_#{$name}_sm.svg);
+        }
+
+        &[class^=icon-#{$name}-wh] {
+            background-image: url(../images/icon/icon_#{$name}_wh.svg);
+        }
+
+        &[class^=icon-#{$name}-blk] {
+            background-image: url(../images/icon/icon_#{$name}_blk.svg);
+        }
+    }
+
+    &.icon-sm{
+        width: 24px;
+        height: 24px;
+    }
+
+    &.icon-xl{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.icon-plus-circle{
+    width: 56px;
+    height: 56px;
+    background-image: url(../images/icon/icon_plus_circle.svg);
+}
+
+.icon-layer-arr{
+    display: block;
+    width: 17px;
+    height: 9px;
+    padding: 0 4px;
+    background-image: url(../images/icon/icon_layer_arr.svg);
+}
+
+.icon-bell{
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/icon/icon_bell.svg);
+    vertical-align: middle;
+}

@@ -1,0 +1,200 @@
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: $form-control-height;
+    padding: 17px 20px;
+    border-radius: $btn-radius;
+    background: rgba(250, 250, 250, 0.8);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index:1;
+    
+    &:disabled, &.disabled{
+        opacity: .4;
+        pointer-events: none;
+    }
+
+    &-text{
+        height: auto;
+        padding: 0;
+        box-shadow: none !important; 
+        border-radius: 0;
+        border: 2px solid transparent;
+        background: transparent;
+        font-size: 14px;
+        font-weight: 600;
+        color: $color-gray;
+
+        &.text-success .icon-arr{
+            background-image: url(../images/icon/icon_arr_blue.svg);
+        }
+
+        &:focus{
+            border: 2px solid rgba(0, 123, 255, .25);
+        }
+    }
+
+    &-normal{
+        border-radius: $border-radius-small;
+        box-shadow: none;
+    }
+
+    &-primary{
+        background: $color-primary;
+        border-color: $color-primary;
+        color: $color-white !important;
+
+        &-dark{
+            background: $color-primary-dark;
+            border-color: $color-primary-dark;
+            color: $color-white;
+
+            &:disabled, &.disabled{
+                opacity: 1;
+                color: $color-primary-light1;
+            }
+        }
+    }
+
+    &-black{
+        background: $color-black;
+        border-color: $color-black;
+        color: $color-white !important;
+    }
+
+    &-sm{
+        width: auto !important;
+        height: 40px;
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+    
+    @include media-max(xl){
+        height: 48px;
+        padding: 14px 16px;
+    }
+}
+
+// Outline Style
+[class*=btn-outline]{
+    overflow: hidden;;
+    position: relative;
+    background: none !important;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        padding-top: 100%;
+        border-radius: 9em;
+        opacity: 0;
+        transform: translate(0,-50%) scale(0);
+    }
+    @include hover{
+        color: $color-white;
+        &:before{
+            opacity: 1;
+            transform: translate(0,-50%) scale(1);
+            transition: .5s $animation-timing;
+            border-radius: 0;
+        }
+    }
+}
+
+[class*=btn-underline]{
+    position:relative;
+    padding-bottom:.01em;
+    white-space: nowrap;
+    color:$color-body;
+
+    &:before{
+        content:'';
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        height: 1px;
+        background:$color-body;
+    }
+    
+    @include hover{
+        color:$color-body;
+    }
+}
+
+$outline: 'primary', 'black', 'light';
+
+@each $theme in $outline {
+    .btn-outline-#{$theme} {
+        color: #fff;
+        border-color: map-get($color, $theme);
+        color: map-get($color, $theme);
+        &:before{
+            background: map-get($color, $theme);
+        }
+        @include hover{
+            border-color: map-get($color, $theme);
+        }
+    }
+
+    .btn-underline-#{$theme} {
+        color: map-get($color, $theme);
+        &:before{
+            background: map-get($color, $theme);
+        }
+        @include hover{
+            color: map-get($color, $theme);
+        }
+    }
+}
+
+.btn-outline-gray {
+    color: #111;
+    border-color:#ccc;
+    &:before{
+        background:#666;
+    }
+    @include hover{
+        border-color:#666;
+    }
+}
+
+.btn-area{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 60px;
+
+    .btn{
+        width: 100%;
+    }
+
+    &.flex-wrap{
+        gap: 16px;
+    }
+}
+
+.btn-sticky{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateY(0);
+    transition: transform .2s 0.15s ease-out;
+    gap: 0;
+
+    .btn{
+        border-radius: 0;
+        box-shadow: none;
+        background: #F4F4F4;
+        margin: 0 !important;
+        font-size: 20px;
+    }
+}

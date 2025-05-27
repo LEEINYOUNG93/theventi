@@ -1,0 +1,263 @@
+<header id="header" class="header">
+    <!-- S : 헤더 상단-->
+    <div class="header__wrap">
+       <div class="container">
+            <h1 class="logo">
+                <a href="/index.html" title="홈으로 가기">
+                    <img src="/assets/images/main/logo.svg" alt="메디칼데포">
+                </a>
+            </h1>
+            <form action="/trade/all.html" method="GET">
+                <div class="search-bx">
+                    <input type="text" name="searchValue" placeholder="검색어를 입력해주세요.">
+                    <button type="submit" class="search-btn">
+                        <i class="xi-search"></i>
+                    </button>
+                </div>
+            </form>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="/trade/sell.html">판매희망</a>
+                    </li>
+                    <li>
+                        <a href="/trade/purchase.html">구매희망</a>
+                    </li>
+                    <li>
+                        <a href="/trade/sold-out.html">판매완료</a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="button" class="ham-btn"><i class="xi-bars"></i></button>
+       </div>
+    </div>
+    <!-- E : 헤더 상단-->
+    <!-- S : 헤더 배너 (전체 카테고리)-->
+    <div class="header__banner">
+        <div class="container">
+            <div class="left-side">
+                <button type="button" class="category-btn" title="전체카테고리">
+                    <i class="xi-bars"></i> 전체카테고리
+                </button>
+                <ul class="arrow-list">
+                    <!-- S : 벼룩시장-->
+                    <li>
+                        <a href="/promotion/flee-market.html" title="벼룩시장" target="_blank">벼룩시장<i class="xi-angle-right-thin"></i></a>
+                    </li>
+                    <!-- E : 벼룩시장-->
+                    <!-- S : 스마트 옥션-->
+                    <li>
+                        <a href="/promotion/smart-auction.html" title="스마트 옥션">스마트 옥션<i class="xi-angle-right-thin"></i></a>
+                    </li>
+                    <!-- E : 스마트 옥션-->
+                </ul>
+                <ul class="link-list">
+                    <!-- S : 매물등록-->
+                    <li>
+                        <a href="/regist/index.html" title="매물등록">매물등록</a>
+                    </li>
+                    <!-- E : 매물등록-->
+                    <!-- S : 개원상담-->
+                    <li>
+                        <a href="/regist/consultation.html" title="매물등록">개원상담</a>
+                    </li>
+                    <!-- E : 개원상담-->
+                    <!-- S : 폐업상담-->
+                    <li>
+                        <a href="/regist/closure.html" title="폐업상담">폐업상담</a>
+                    </li>
+                    <!-- E : 폐업상담-->
+                    <!-- S : 위탁판매-->
+                    <li>
+                        <a href="/regist/consigning.html" title="위탁판매">위탁판매</a>
+                    </li>
+                    <!-- E : 위탁판매-->
+                </ul>
+            </div>
+            <div class="right-side">
+                <ul class="util-list">
+                    <!-- S : 즐겨찾기-->
+                    <li>
+                        <a href="javascript:void(0)" title="즐겨찾기"><i class="xi-star"></i>즐겨찾기</a>
+                    </li>
+                    <!-- E : 즐겨찾기-->
+                    <!-- S : 로그인-->
+                    <li>
+                        <a href="/member/sign-in.html" title="로그인"><i class="xi-log-in"></i>로그인</a>
+                    </li>
+                    <!-- E : 로그인-->
+                    <!-- S : 로그아웃-->
+                    <!-- <li>
+                        <a href="javascript:void(0)" title="로그아웃"><i class="xi-log-out"></i>로그아웃</a>
+                    </li> -->
+                    <!-- E : 로그아웃-->
+                    <!-- S : 회원가입-->
+                    <li>
+                        <a href="/member/sign-up.html" title="회원가입"><i class="xi-user-plus"></i>회원가입</a>
+                    </li>
+                    <!-- E : 회원가입-->
+                    <!-- S : 마이페이지-->
+                    <!-- <li>
+                        <a href="/mypage/my-eqp-all.html" title="마이페이지"><i class="xi-profile"></i>마이페이지</a>
+                    </li> -->
+                    <!-- E : 마이페이지-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- E : 헤더 배너 (전체 카테고리)-->
+    <!-- S : 전체카테고리 메뉴-->
+    <div class="category-menu">
+        <div class="inner">
+            <div include-html="/include/gnb_nav.html"></div>
+        </div>
+    </div>
+    <!-- E : 전체카테고리 메뉴-->
+</header>
+<!-- S : 모바일 gnb-->
+<div class="mobile-nav-bg"></div>
+<div class="mobile-nav">
+    <div class="top">
+        <div class="mobile-nav-head">
+            <a href="/index.html" class="logo" title="메인으로">
+                <img src="/assets/images/main/logo.svg" alt="메디칼데포" />
+            </a>
+            <button class="mobile-nav-close" type="button">
+                <i class="xi-close"></i>
+            </button>
+        </div>
+        <ul class="util-list">
+            <!-- S : 즐겨찾기-->
+            <li>
+                <a href="javascript:void(0)" title="즐겨찾기">즐겨찾기</a>
+            </li>
+            <!-- E : 즐겨찾기-->
+            <!-- S : 로그인-->
+            <li>
+                <a href="/member/sign-in.html" title="로그인">로그인</a>
+            </li>
+            <!-- E : 로그인-->
+            <!-- S : 로그아웃-->
+            <!-- <li>
+                <a href="javascript:void(0)" title="로그아웃">로그아웃</a>
+            </li> -->
+            <!-- E : 로그아웃-->
+            <!-- S : 회원가입-->
+            <li>
+                <a href="/member/sign-up.html" title="회원가입">회원가입</a>
+            </li>
+            <!-- E : 회원가입-->
+            <!-- S : 마이페이지-->
+            <!-- <li>
+                <a href="/mypage/my-eqp-all.html" title="마이페이지">마이페이지</a>
+            </li> -->
+            <!-- E : 마이페이지-->
+        </ul>
+        <form action="/trade/all.html" method="GET">
+            <div class="search-bx">
+                <input type="text" name="searchValue" placeholder="검색어를 입력해주세요.">
+                <button type="submit" class="search-btn">
+                    <i class="xi-search"></i>
+                </button>
+            </div>
+        </form>
+        <ul class="link-list type-a">
+            <li>
+                <a href="/trade/sell.html" title="판매희망">
+                    <strong class="tit">
+                        <img src="/assets/images/icon/icon_bx.svg" alt="매물등록">
+                        판매희망
+                    </strong>
+                    <i class="xi-angle-right-thin"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/trade/purchase.html" title="구매희망">
+                    <strong class="tit">
+                        <img src="/assets/images/icon/icon_cart.svg" alt="판매희망">
+                        구매희망
+                    </strong>
+                    <i class="xi-angle-right-thin"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="link-list type-b">
+            <li>
+                <a href="/trade/sold-out.html" title="판매완료">
+                    <strong class="tit">
+                        판매완료
+                    </strong>
+                    <i class="xi-angle-right-thin"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/regist/consultation.html" title="개원상담">
+                    <strong class="tit">
+                        개원상담
+                    </strong>
+                    <i class="xi-angle-right-thin"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/regist/closure.html" title="폐업상담">
+                    <strong class="tit">
+                        폐업상담
+                    </strong>
+                    <i class="xi-angle-right-thin"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/regist/consigning.html" title="위탁판매">
+                    <strong class="tit">
+                        위탁판매
+                    </strong>
+                    <i class="xi-angle-right-thin"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="link-list type-c">
+            <li>
+                <a href="/promotion/flee-market.html" title="벼룩시장" target="_blank">
+                    <strong class="tit">
+                        벼룩시장
+                    </strong>
+                    <i class="xi-angle-right-thin"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/promotion/smart-auction.html" title="스마트 옥션">
+                    <strong class="tit">
+                        스마트 옥션
+                    </strong>
+                    <i class="xi-angle-right-thin"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <ul class="quick-list">
+            <!--
+                미 로그인 : 경고창 출력
+                로그인 : 마이페이지 찜 상세페이지로 이동-->
+            <li>
+                <a href="javascript:void(0)" class="zzim">
+                    <i class="xi-heart"></i>
+                    <p>찜한 상품 <strong>10</strong></p>
+                </a>
+            </li>
+            <li>
+                <a href="/pop/recent-pop.html" class="popup-link recent">
+                    <img src="/assets/images/icon/icon_recent_blue.svg" alt="최근 본 상품">
+                    <p>최근 본 상품</p>
+                </a>
+            </li>
+            <li>
+                <button type="button" class="kakao">
+                    <i class="xi-speech"></i>
+                    <p class="mt-1">카카오톡 문의하기</p>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- E : 모바일 gnb-->

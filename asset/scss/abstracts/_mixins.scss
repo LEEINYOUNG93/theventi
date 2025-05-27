@@ -1,0 +1,133 @@
+// Breakpoints
+@mixin media-min($breakpoints) {
+    $min: map-get($grid-breakpoints, $breakpoints);
+
+    @media (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin media-max($breakpoints) {
+    $max: map-get($grid-breakpoints, $breakpoints) - 0.02;
+
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+// Typography
+@mixin font-face($font-name, $file-name, $font-weight: 400){
+    @font-face{
+        font-weight: $font-weight;
+        font-family: $font-name;
+        src: url('../fonts/' + $file-name) fonrmat('woff');
+    }
+}
+
+@mixin font-en($transform: uppercase) {
+    font-family: $font-family-en;
+    text-transform: $transform;
+    letter-spacing: 0;
+}
+
+@mixin text-emphasis-variant($parent, $color) {
+    #{$parent} {
+        color: $color !important;
+    }
+}
+
+@mixin text-clamp($line: 1, $line-height: 1.333) {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: #{$line-height*$line}em;
+    line-height: $line-height;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal !important
+}
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin text-hide {  
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+// Display
+@mixin flex($flex: flex, $align: center, $justify: flex-start, $direction: row) {
+    display: $flex; 
+    flex-wrap: wrap;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+// Background
+@mixin background($url: null, $position: 0 0, $size: auto 100%, $color: null){
+    @if($url == null){
+        background-repeat: no-repeat;
+        background-position: $position;
+        background-size: $size;
+    } @else{
+        background: $color url($url) no-repeat $position/$size;
+    }
+}
+
+@mixin form-icon($width:24px, $height:24px){
+    position: absolute;
+    top: 50%;
+    right:1.25em;
+    z-index: 1;
+    width: rem($width);
+    height: rem($height);
+    transition: all 0.3s;
+    transform: translateY( calc( -50% - 2.5px ));
+    outline: 0 !important;    
+}
+
+// Effect
+@mixin hover() {
+    &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active{
+        @content;
+    }
+}
+
+@mixin active(){
+    &:active, &:not(:disabled):not(.disabled):active{
+        @content;
+    }
+}
+
+// Img Frame
+@mixin make-frame($padding:56.25%){
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &:before{
+        content:'';
+        display: block;
+        padding-top: $padding;
+    }
+    
+    img, iframe, video{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
