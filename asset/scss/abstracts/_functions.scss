@@ -1,7 +1,0 @@
-@function rem($px, $base: $base-rem) {
-    @return (remove-unit($px / $base)) * 1rem;
-}
-
-@function remove-unit($value) {
-    @return ($value / ($value * 0 + 1));
-}   

@@ -15,28 +15,7 @@
     }
 }
 
-// Typography
-@mixin font-face($font-name, $file-name, $font-weight: 400){
-    @font-face{
-        font-weight: $font-weight;
-        font-family: $font-name;
-        src: url('../fonts/' + $file-name) fonrmat('woff');
-    }
-}
-
-@mixin font-en($transform: uppercase) {
-    font-family: $font-family-en;
-    text-transform: $transform;
-    letter-spacing: 0;
-}
-
-@mixin text-emphasis-variant($parent, $color) {
-    #{$parent} {
-        color: $color !important;
-    }
-}
-
-@mixin text-clamp($line: 1, $line-height: 1.333) {
+@mixin text-clamp($line: 1, $line-height: 1.4) {
     display: -webkit-box;
     overflow: hidden;
     max-height: #{$line-height*$line}em;
@@ -53,14 +32,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-@mixin text-hide {  
-    font: 0/0 a;
-    color: transparent;
-    text-shadow: none;
-    background-color: transparent;
-    border: 0;
 }
 
 // Display
@@ -81,18 +52,6 @@
     } @else{
         background: $color url($url) no-repeat $position/$size;
     }
-}
-
-@mixin form-icon($width:24px, $height:24px){
-    position: absolute;
-    top: 50%;
-    right:1.25em;
-    z-index: 1;
-    width: rem($width);
-    height: rem($height);
-    transition: all 0.3s;
-    transform: translateY( calc( -50% - 2.5px ));
-    outline: 0 !important;    
 }
 
 // Effect

@@ -1,263 +1,115 @@
 <header id="header" class="header">
-    <!-- S : 헤더 상단-->
-    <div class="header__wrap">
-       <div class="container">
-            <h1 class="logo">
-                <a href="/index.html" title="홈으로 가기">
-                    <img src="/assets/images/main/logo.svg" alt="메디칼데포">
-                </a>
-            </h1>
-            <form action="/trade/all.html" method="GET">
-                <div class="search-bx">
-                    <input type="text" name="searchValue" placeholder="검색어를 입력해주세요.">
-                    <button type="submit" class="search-btn">
-                        <i class="xi-search"></i>
-                    </button>
-                </div>
-            </form>
-            <nav class="gnb">
-                <ul>
-                    <li>
-                        <a href="/trade/sell.html">판매희망</a>
-                    </li>
-                    <li>
-                        <a href="/trade/purchase.html">구매희망</a>
-                    </li>
-                    <li>
-                        <a href="/trade/sold-out.html">판매완료</a>
-                    </li>
-                </ul>
-            </nav>
-            <button type="button" class="ham-btn"><i class="xi-bars"></i></button>
-       </div>
-    </div>
-    <!-- E : 헤더 상단-->
-    <!-- S : 헤더 배너 (전체 카테고리)-->
-    <div class="header__banner">
-        <div class="container">
-            <div class="left-side">
-                <button type="button" class="category-btn" title="전체카테고리">
-                    <i class="xi-bars"></i> 전체카테고리
-                </button>
-                <ul class="arrow-list">
-                    <!-- S : 벼룩시장-->
-                    <li>
-                        <a href="/promotion/flee-market.html" title="벼룩시장" target="_blank">벼룩시장<i class="xi-angle-right-thin"></i></a>
-                    </li>
-                    <!-- E : 벼룩시장-->
-                    <!-- S : 스마트 옥션-->
-                    <li>
-                        <a href="/promotion/smart-auction.html" title="스마트 옥션">스마트 옥션<i class="xi-angle-right-thin"></i></a>
-                    </li>
-                    <!-- E : 스마트 옥션-->
-                </ul>
-                <ul class="link-list">
-                    <!-- S : 매물등록-->
-                    <li>
-                        <a href="/regist/index.html" title="매물등록">매물등록</a>
-                    </li>
-                    <!-- E : 매물등록-->
-                    <!-- S : 개원상담-->
-                    <li>
-                        <a href="/regist/consultation.html" title="매물등록">개원상담</a>
-                    </li>
-                    <!-- E : 개원상담-->
-                    <!-- S : 폐업상담-->
-                    <li>
-                        <a href="/regist/closure.html" title="폐업상담">폐업상담</a>
-                    </li>
-                    <!-- E : 폐업상담-->
-                    <!-- S : 위탁판매-->
-                    <li>
-                        <a href="/regist/consigning.html" title="위탁판매">위탁판매</a>
-                    </li>
-                    <!-- E : 위탁판매-->
-                </ul>
-            </div>
-            <div class="right-side">
-                <ul class="util-list">
-                    <!-- S : 즐겨찾기-->
-                    <li>
-                        <a href="javascript:void(0)" title="즐겨찾기"><i class="xi-star"></i>즐겨찾기</a>
-                    </li>
-                    <!-- E : 즐겨찾기-->
-                    <!-- S : 로그인-->
-                    <li>
-                        <a href="/member/sign-in.html" title="로그인"><i class="xi-log-in"></i>로그인</a>
-                    </li>
-                    <!-- E : 로그인-->
-                    <!-- S : 로그아웃-->
-                    <!-- <li>
-                        <a href="javascript:void(0)" title="로그아웃"><i class="xi-log-out"></i>로그아웃</a>
-                    </li> -->
-                    <!-- E : 로그아웃-->
-                    <!-- S : 회원가입-->
-                    <li>
-                        <a href="/member/sign-up.html" title="회원가입"><i class="xi-user-plus"></i>회원가입</a>
-                    </li>
-                    <!-- E : 회원가입-->
-                    <!-- S : 마이페이지-->
-                    <!-- <li>
-                        <a href="/mypage/my-eqp-all.html" title="마이페이지"><i class="xi-profile"></i>마이페이지</a>
-                    </li> -->
-                    <!-- E : 마이페이지-->
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- E : 헤더 배너 (전체 카테고리)-->
-    <!-- S : 전체카테고리 메뉴-->
-    <div class="category-menu">
-        <div class="inner">
-            <div include-html="/include/gnb_nav.html"></div>
-        </div>
-    </div>
-    <!-- E : 전체카테고리 메뉴-->
-</header>
-<!-- S : 모바일 gnb-->
-<div class="mobile-nav-bg"></div>
-<div class="mobile-nav">
-    <div class="top">
-        <div class="mobile-nav-head">
-            <a href="/index.html" class="logo" title="메인으로">
-                <img src="/assets/images/main/logo.svg" alt="메디칼데포" />
-            </a>
-            <button class="mobile-nav-close" type="button">
-                <i class="xi-close"></i>
+    <div class="header-inner">
+        <div class="header-top container">
+            <button type="button" class="sidebar--open" aria-controls="sidebar" aria-expanded="false"
+                aria-label="사이트바 메뉴열림">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none">
+                    <path stroke="#fff" stroke-linecap="round" stroke-width="2"
+                        d="M2.842 4h20M2.842 12h20M2.842 20h20" />
+                </svg>
+            </button>
+            <button type="button" class="sidebar--alert" aria-controls="alert" aria-expanded="false"
+                aria-label="사이드바 알림내용 버튼">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" fill="none">
+                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                        stroke-width="2"
+                        d="M17.842 17.37c-1.489-.91-2.419-4.001-2.419-5.638V8.641c0-2.91-2.418-5.093-5.581-5.093-3.163 0-5.582 2.183-5.582 5.093v3.273c0 1.637-.93 4.728-2.418 5.638h16v-.182ZM9.841 1v2.364M11.701 21h-3.72" />
+                </svg>
             </button>
         </div>
-        <ul class="util-list">
-            <!-- S : 즐겨찾기-->
-            <li>
-                <a href="javascript:void(0)" title="즐겨찾기">즐겨찾기</a>
-            </li>
-            <!-- E : 즐겨찾기-->
-            <!-- S : 로그인-->
-            <li>
-                <a href="/member/sign-in.html" title="로그인">로그인</a>
-            </li>
-            <!-- E : 로그인-->
-            <!-- S : 로그아웃-->
-            <!-- <li>
-                <a href="javascript:void(0)" title="로그아웃">로그아웃</a>
-            </li> -->
-            <!-- E : 로그아웃-->
-            <!-- S : 회원가입-->
-            <li>
-                <a href="/member/sign-up.html" title="회원가입">회원가입</a>
-            </li>
-            <!-- E : 회원가입-->
-            <!-- S : 마이페이지-->
-            <!-- <li>
-                <a href="/mypage/my-eqp-all.html" title="마이페이지">마이페이지</a>
-            </li> -->
-            <!-- E : 마이페이지-->
-        </ul>
-        <form action="/trade/all.html" method="GET">
-            <div class="search-bx">
-                <input type="text" name="searchValue" placeholder="검색어를 입력해주세요.">
-                <button type="submit" class="search-btn">
-                    <i class="xi-search"></i>
-                </button>
+        <!-- S : 사이드바 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="container">
+                    <a href="../index.html">
+                        <img src="./assets/images/main/logo.svg" alt="더벤티 로고">
+                    </a>
+                    <button type="button" class="sidebar--close" aria-controls="close" aria-expanded="false"
+                        aria-label="사이드바 닫기버튼">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M1 1.15921L16.9999 17M1.00008 16.8408L17 1" stroke="white"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-        </form>
-        <ul class="link-list type-a">
-            <li>
-                <a href="/trade/sell.html" title="판매희망">
-                    <strong class="tit">
-                        <img src="/assets/images/icon/icon_bx.svg" alt="매물등록">
-                        판매희망
-                    </strong>
-                    <i class="xi-angle-right-thin"></i>
+            <div class="sidebar-login">
+                <div class="container">
+                    <div class="login-bx">
+                        <p class="title-1" data-font="font_20">로그인 해주세요.</p>
+                        <button type="button" class="sidebar--login" aria-controls="login" aria-expanded="false"
+                            aria-label="사이드바 로그인 버튼">
+                            <span class="" data-color="point_1" data-font="font_14" data-font-weight="medium">로그인</span>
+                        </button>
+                    </div>
+                    <ul class="sidebar_icon_list">
+                        <li class="sidebar_icon_item">
+                            <a href="#">
+                                <img src="./assets/images/main/stamp_icon.png" alt="스탬프">
+                                <p data-font="font_14">스탬프</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./assets/images/main/coupon_icon.png" alt="쿠폰">
+                                <p data-font="font_14">쿠폰</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./assets/images/main/badge_icon.png" alt="뱃지">
+                                <p data-font="font_14">뱃지</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <ul class="sidebar-menu-list">
+                    <li><a href="javascript:void(0);">픽업 주문하기</a></li>
+                    <li><a href="javascript:void(0);">배달 주문하기</a></li>
+                    <li><a href="javascript:void(0);">주문내역</a></li>
+                    <li><a href="javascript:void(0);">개인컵 이용내역</a></li>
+                    <li><a href="javascript:void(0);">선물하기</a></li>
+                    <li><a href="javascript:void(0);">매장찾기</a></li>
+                </ul>
+                <ul class="sidebar-menu-list">
+                    <li><a href="javascript:void(0);">프리퀀시</a></li>
+                    <li><a href="javascript:void(0);">이벤트</a></li>
+                    <li><a href="javascript:void(0);">공지사항</a></li>
+                </ul>
+                <ul class="sidebar-menu-list">
+                    <li><a href="javascript:void(0);">이용안내</a></li>
+                    <li><a href="javascript:void(0);">자주 묻는 질문</a></li>
+                    <li><a href="javascript:void(0);">앱 설정</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="../index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 28 27" fill="none">
+                        <path
+                            d="M10.9916 24.5313V17.01H17.0087V24.5313C17.0087 25.3587 17.6856 26.0356 18.513 26.0356H23.0258C23.8531 26.0356 24.5301 25.3587 24.5301 24.5313V14.0014H27.0873C27.7793 14.0014 28.1102 13.144 27.5837 12.6927L15.008 1.36552C14.4364 0.85407 13.5639 0.85407 12.9923 1.36552L0.416558 12.6927C-0.0948952 13.144 0.221002 14.0014 0.912968 14.0014H3.47023V24.5313C3.47023 25.3587 4.14716 26.0356 4.97451 26.0356H9.48733C10.3147 26.0356 10.9916 25.3587 10.9916 24.5313Z"
+                            fill="#7B00A0" />
+                    </svg>
                 </a>
-            </li>
-            <li>
-                <a href="/trade/purchase.html" title="구매희망">
-                    <strong class="tit">
-                        <img src="/assets/images/icon/icon_cart.svg" alt="판매희망">
-                        구매희망
-                    </strong>
-                    <i class="xi-angle-right-thin"></i>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path
+                            d="M14.0003 0.666504C10.3792 0.666504 9.92512 0.681866 8.50297 0.746727C7.0838 0.81147 6.11456 1.0369 5.26644 1.36644C4.38966 1.70719 3.6461 2.16312 2.90487 2.90434C2.16361 3.64557 1.70767 4.38921 1.36697 5.26599C1.03735 6.11408 0.811998 7.08331 0.747176 8.50248C0.682314 9.92463 0.666992 10.3787 0.666992 13.9998C0.666992 17.6209 0.682314 18.0749 0.747176 19.4971C0.811998 20.9163 1.03735 21.8855 1.36697 22.7336C1.70771 23.6104 2.16365 24.3539 2.90487 25.0952C3.64614 25.8365 4.38966 26.2924 5.26644 26.6331C6.11456 26.9627 7.0838 27.1881 8.50297 27.2529C9.92512 27.3177 10.3792 27.3331 14.0003 27.3331C17.6214 27.3331 18.0754 27.3177 19.4976 27.2529C20.9168 27.1881 21.886 26.9627 22.7341 26.6331C23.6109 26.2924 24.3544 25.8365 25.0957 25.0952C25.8369 24.3539 26.2929 23.6104 26.6336 22.7336C26.9632 21.8855 27.1886 20.9163 27.2533 19.4971C27.3182 18.0749 27.3336 17.6209 27.3336 13.9998C27.3336 10.3787 27.3182 9.92463 27.2533 8.50248C27.1886 7.08331 26.9632 6.11408 26.6336 5.26599C26.2929 4.38921 25.8369 3.64557 25.0957 2.90434C24.3544 2.16312 23.6109 1.70719 22.7341 1.36644C21.886 1.0369 20.9168 0.81147 19.4976 0.746727C18.0754 0.681866 17.6214 0.666504 14.0003 0.666504ZM14.0003 3.06888C17.5604 3.06888 17.9821 3.0825 19.3881 3.14664C20.6881 3.20591 21.3941 3.42312 21.8638 3.60571C22.4863 3.84762 22.9304 4.13651 23.3969 4.60309C23.8636 5.06966 24.1525 5.51385 24.3944 6.13619C24.577 6.60602 24.7942 7.31203 24.8534 8.612C24.9176 10.018 24.9312 10.4397 24.9312 13.9998C24.9312 17.5599 24.9176 17.9816 24.8534 19.3876C24.7942 20.6876 24.577 21.3936 24.3944 21.8634C24.1525 22.4858 23.8636 22.9299 23.3969 23.3965C22.9304 23.8631 22.4862 24.152 21.8639 24.3939C21.3941 24.5765 20.688 24.7937 19.3881 24.8529C17.9824 24.9171 17.5607 24.9307 14.0003 24.9307C10.4399 24.9307 10.0183 24.9171 8.61249 24.8529C7.31248 24.7937 6.6065 24.5765 6.13671 24.3939C5.5143 24.152 5.07015 23.8631 4.60362 23.3965C4.13704 22.9299 3.8481 22.4857 3.6062 21.8634C3.42361 21.3936 3.20644 20.6875 3.14713 19.3876C3.08298 17.9816 3.06937 17.5599 3.06937 13.9998C3.06937 10.4397 3.08298 10.018 3.14713 8.612C3.20644 7.31199 3.42361 6.60602 3.6062 6.13623C3.8481 5.51381 4.13704 5.06966 4.60358 4.60313C5.07015 4.13651 5.51434 3.84762 6.13667 3.60571C6.6065 3.42312 7.31252 3.20591 8.61249 3.14664C10.0184 3.0825 10.4402 3.06888 14.0003 3.06888"
+                            fill="#7B00A0" />
+                        <path
+                            d="M14.0012 18.4455C11.5465 18.4455 9.55667 16.4557 9.55667 14.0011C9.55667 11.5464 11.5465 9.55661 14.0012 9.55661C16.4557 9.55661 18.4456 11.5464 18.4456 14.0011C18.4456 16.4557 16.4557 18.4455 14.0012 18.4455ZM14.0012 7.15424C10.2197 7.15424 7.1543 10.2196 7.1543 14.0011C7.1543 17.7825 10.2197 20.8479 14.0012 20.8479C17.7825 20.8479 20.8479 17.7825 20.8479 14.0011C20.8479 10.2196 17.7825 7.15424 14.0012 7.15424ZM22.7185 6.88371C22.7185 7.7674 22.0021 8.4837 21.1185 8.4837C20.2348 8.4837 19.5185 7.7674 19.5185 6.88371C19.5185 6.00007 20.2348 5.28369 21.1185 5.28369C22.0021 5.28369 22.7185 6.00007 22.7185 6.88371Z"
+                            fill="#7B00A0" />
+                    </svg>
                 </a>
-            </li>
-        </ul>
-        <ul class="link-list type-b">
-            <li>
-                <a href="/trade/sold-out.html" title="판매완료">
-                    <strong class="tit">
-                        판매완료
-                    </strong>
-                    <i class="xi-angle-right-thin"></i>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24" fill="none">
+                        <path d="M21.6663 0V24H14.5075L7.49184 11.9171V24H0.333008V0H7.49184L14.5075 12.5658V0H21.6663Z"
+                            fill="#7B00A0" />
+                    </svg>
                 </a>
-            </li>
-            <li>
-                <a href="/regist/consultation.html" title="개원상담">
-                    <strong class="tit">
-                        개원상담
-                    </strong>
-                    <i class="xi-angle-right-thin"></i>
-                </a>
-            </li>
-            <li>
-                <a href="/regist/closure.html" title="폐업상담">
-                    <strong class="tit">
-                        폐업상담
-                    </strong>
-                    <i class="xi-angle-right-thin"></i>
-                </a>
-            </li>
-            <li>
-                <a href="/regist/consigning.html" title="위탁판매">
-                    <strong class="tit">
-                        위탁판매
-                    </strong>
-                    <i class="xi-angle-right-thin"></i>
-                </a>
-            </li>
-        </ul>
-        <ul class="link-list type-c">
-            <li>
-                <a href="/promotion/flee-market.html" title="벼룩시장" target="_blank">
-                    <strong class="tit">
-                        벼룩시장
-                    </strong>
-                    <i class="xi-angle-right-thin"></i>
-                </a>
-            </li>
-            <li>
-                <a href="/promotion/smart-auction.html" title="스마트 옥션">
-                    <strong class="tit">
-                        스마트 옥션
-                    </strong>
-                    <i class="xi-angle-right-thin"></i>
-                </a>
-            </li>
-        </ul>
+            </div>
+        </aside>
+        <!-- E : 사이드바 -->
     </div>
-    <div class="bottom">
-        <ul class="quick-list">
-            <!--
-                미 로그인 : 경고창 출력
-                로그인 : 마이페이지 찜 상세페이지로 이동-->
-            <li>
-                <a href="javascript:void(0)" class="zzim">
-                    <i class="xi-heart"></i>
-                    <p>찜한 상품 <strong>10</strong></p>
-                </a>
-            </li>
-            <li>
-                <a href="/pop/recent-pop.html" class="popup-link recent">
-                    <img src="/assets/images/icon/icon_recent_blue.svg" alt="최근 본 상품">
-                    <p>최근 본 상품</p>
-                </a>
-            </li>
-            <li>
-                <button type="button" class="kakao">
-                    <i class="xi-speech"></i>
-                    <p class="mt-1">카카오톡 문의하기</p>
-                </button>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- E : 모바일 gnb-->
+</header>
