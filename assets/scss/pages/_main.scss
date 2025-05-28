@@ -17,7 +17,7 @@
 }
 
 .main {
-    background: $color-white;
+    background: $color-primary-8;
     padding-top: $nav-height;
     overflow: hidden;
 }
@@ -27,6 +27,9 @@
     top: 0;
     left: 0;
     z-index: 100;
+    &.active{
+        z-index: 1;
+    }
 
     .main-inner {
         padding: 20px 16px;
@@ -50,7 +53,7 @@
 
     .image-bx {
         aspect-ratio: 328/400;
-        box-shadow: var(--box-shadow);
+        box-shadow: var(--drop-shadow);
         border-radius: var(--content-border-radius);
     }
 
@@ -86,7 +89,6 @@
                 color: $color-white;
             }
         }
-
     }
 }
 
@@ -96,7 +98,7 @@
             display: flex;
             border: 1px solid $color-gray-e;
             border-radius: var(--content-border-radius);
-            box-shadow: var(--box-shadow);
+            box-shadow: var(--drop-shadow);
             padding: 25px 28.5px;
 
             li {
@@ -146,10 +148,58 @@
             width: 100%;
             cursor: pointer;
         }
+
+        /*로그인후 쿠폰*/
+        .main-coupon-list {
+            margin-top: var(--common-gap);
+
+            .flex-bx {
+                display: flex;
+
+                >div {
+                    height: 121px;
+                    border-radius: var(--content-border-radius);
+                    box-shadow: var(--drop-shadow);
+                }
+            }
+
+            .left-bx {
+                flex: 0 0 67%;
+                @include flex($align: flex-start, $justify: center, $direction: column);
+                gap: 10px;
+                padding-left: 20px;
+            }
+
+            .right-bx {
+                flex: 0 0 33%;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    background-image: url(../images/main/coupon-line.png);
+                    width: 2px;
+                    height: 79px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                }
+
+                .coupon-down-btn {
+                    background: $color-primary;
+                    @include flex($justify: center, $direction: column);
+                    gap: 8px;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: var(--content-border-radius);
+                }
+            }
+        }
     }
 
     &-3 {
         padding-bottom: 40px;
+
         .event-list {
             li+li {
                 margin-top: 40px;
@@ -159,7 +209,7 @@
                 @include flex($justify: space-between);
                 padding: 29.5px 17px 29.5px 24px;
                 border-radius: var(--content-border-radius);
-                box-shadow: var(--box-shadow);
+                box-shadow: var(--drop-shadow);
                 margin-top: var(--common-gap);
 
                 &.box-1 {
@@ -188,50 +238,56 @@
             }
         }
     }
-    &-4{
-        .top-bx{
+
+    &-4 {
+        .container{
+            box-shadow: var(--drop-shadow);
+            padding: 24px 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        .top-bx {
             @include flex($justify: space-between);
         }
-        .location-bx{
+
+        .bottom-bx {
             display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .bottom-bx{
-            display: flex;
-            gap: var(--common-gap);
-            padding: 16px 0 101px 0;
+            gap: var(--common-gap-small);
+            margin-top: 16px;
         }
 
-        .fix-bx{
-            p{
+        .fix-bx {
+            p {
                 color: rgba($color-black, 0.6);
                 text-align: center;
             }
         }
 
-        .more_btn{
+        .more_btn {
             @include flex($justify: center, $direction: column);
             width: 96px;
             height: 96px;
             background: $color-primary-7;
             border-radius: 50%;
         }
-        .swiper-container{
+
+        .swiper-container {
             width: calc(100% - 96px);
             overflow: hidden;
         }
-        .swiper-wrapper{
+
+        .swiper-wrapper {
             height: auto;
         }
-        .swiper-slide{
-            max-width: 96px; 
-            .img-bx{
+
+        .swiper-slide {
+            .img-bx {
                 position: relative;
                 overflow: hidden;
                 border-radius: 50%;
                 aspect-ratio: 1/1;
-                &::after{
+
+                &::after {
                     content: "";
                     width: 100%;
                     height: 100%;
@@ -243,10 +299,61 @@
                     z-index: -1;
                 }
             }
-            p{
+
+            p {
                 color: #333;
                 text-align: center;
             }
+        }
+    }
+
+    &-5 {
+        .container{
+            box-shadow: var(--drop-shadow);
+            padding: 24px 16px;
+            margin-top: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .top-bx {
+            @include flex($justify: space-between);
+        }
+
+        .main-item-box {
+            margin-top: var(--common-gap);
+            border: 1px solid $color-gray-e;
+            border-radius: var(--content-border-radius);
+        }
+
+        .item-box-top {
+            padding: 24px 16px 16px;
+            position: relative;
+            @include flex($align: flex-start, $justify: space-between);
+        }
+
+        .item-box-bottom {
+            padding: 16px;
+            border-top: 1px solid $color-gray-e;
+             @include flex($justify: space-between);
+        }
+
+        .swiper-wrapper {
+            height: auto;
+        }
+
+        .beverage-bx {
+            aspect-ratio: 26/46;
+            @include flex($justify: center);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+            }
+        }
+
+        .txt-bx {
+            min-width: 160px;
         }
     }
 }

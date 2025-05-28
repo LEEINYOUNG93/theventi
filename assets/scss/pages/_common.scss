@@ -1,5 +1,6 @@
 :root {
-    --color-primary: $color-promary;
+    --color-primary: #7B00A0;
+    --color-white: #fff;
     --font-size-20: 20px;
     --font-size-18: 18px;
     --font-size-17: 17px;
@@ -11,11 +12,14 @@
     --content-border-radius: 16px;
     --border-radius-small: 8px;
     --common-gap: 16px;
-    --box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.1);
-    --drop-shadow: 0px 0px 16px 0px rgba(0,0,0,0.1);
+    --common-gap-small: 8px;
+    --box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.1);
+    --drop-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.1);
+    --content-padding: 24px;
+    --content-padding-small: 16px;
 }
 
-*{
+* {
     letter-spacing: -1px;
 }
 
@@ -28,12 +32,16 @@
     width: 100%;
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
 
 [data-color="point_1"] {
     color: var(--color-primary);
+}
+
+[data-color="white"] {
+    color: var(--color-white);
 }
 
 [data-font="font_20"] {
@@ -74,6 +82,10 @@
     font-weight: $font-weight-bold;
 }
 
+[data-font-weight="semibold"] {
+    font-weight: $font-weight-semibold;
+}
+
 [data-font-weight="medium"] {
     font-weight: $font-weight-medium;
 }
@@ -83,18 +95,301 @@
     line-height: 1.2;
 }
 
-.location-txt{
+.dec-1 {
+    color: rgba($color-black, 0.7);
+    opacity: 0.7;
+}
+
+.color-40 {
+    color: rgba($color-black, 0.4);
+}
+
+.color-60 {
+    color: rgba($color-black, 0.6);
+}
+
+.small-txt {
     font-size: 14px;
-    color: rgba($color-black,0.6);
-    span{
+    color: rgba($color-black, 0.6);
+
+    span {
         font-weight: $font-weight-semibold;
     }
 }
 
-.mt-2{
+.sort-txt {
+    @include flex();
+    margin-top: 6px;
+
+    i {
+        width: 1px;
+        height: 16px;
+        background: rgba($color-black, 0.6);
+        display: inline-block;
+        margin: 0 4px;
+    }
+}
+
+.mt-1 {
+    margin-top: 4px;
+}
+
+.mt-2 {
     margin-top: 8px;
 }
 
-.mt-4{
+.mt-3 {
+    margin-top: 12px;
+}
+
+.mt-4 {
     margin-top: 16px;
+}
+
+.mt-5 {
+    margin-top: 20px;
+}
+
+.mt-6 {
+    margin-top: 24px;
+}
+
+.mb-1 {
+    margin-bottom: 4px;
+}
+
+.mb-2 {
+    margin-bottom: 8px;
+}
+
+.mb-3 {
+    margin-bottom: 12px;
+}
+
+.mb-4 {
+    margin-bottom: 16px;
+}
+
+.mb-5 {
+    margin-bottom: 20px;
+}
+
+.mb-6 {
+    margin-bottom: 24px;
+}
+
+
+.common-flex-btn-bx {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+
+    &.stamp-list-btn {
+        width: 100%;
+        height: 48px;
+        border-radius: var(--border-radius-small);
+        background: $color-primary;
+        justify-content: center;
+    }
+
+    .back-btn {
+        transform: rotate(-90deg);
+    }
+}
+
+.common--btn-type {
+    font-size: 10px;
+    height: 22px;
+    @include flex($justify: center);
+    border-radius: var(--content-border-radius);
+
+    &.order-btn {
+        color: $color-white;
+        background: $color-primary;
+        width: 73px;
+    }
+    &.order-btn-2{
+        color: $color-white;
+        background: $color-primary;
+        width: 57px;
+        font-size: 11px;
+        &.impossible{
+            border: 1px solid $color-gray-e;
+            background: $color-white;
+            color: rgba($color-black, 0.4);
+        }
+    }
+}
+
+.common--select-bx {
+    width: 83px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid $color-primary;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    color: $color-primary;
+    @include flex($justify: center);
+    background-color: $color-white;
+    appearance: none;
+    /* 기본 스타일 제거 */
+    -webkit-appearance: none;
+    /* 사파리 대응 */
+    -moz-appearance: none;
+    /* 파이어폭스 대응 */
+    background-image: url(../images/main/select_icon.svg);
+    @include background($position: calc(100% - 12px) center, $size: 10px 6px);
+    padding: 0 0 0 16px;
+}
+
+.flex-grid-bx {
+    @include flex($justify: space-between);
+    &.distance-bx{
+        padding: 16px;
+    }
+    &.gray-bg{
+        background: $color-gray-e;
+    }
+}
+
+/* 찜,스탬프 버튼 */
+.like-btn {
+    background-image: url(../images/main/zzim-default.svg);
+    @include background($position: center center, $size: 17px 17px);
+    width: 17px;
+    height: 17px;
+    transition: all .3s $animation-timing;
+
+    &.active {
+        background-image: url(../images/main/zzim-active.svg);
+    }
+}
+
+.stamp-btn {
+    background-image: url(../images/main/stamp-defalut.svg);
+    @include background($position: center center, $size: 44px 44px);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: all .3s $animation-timing;
+
+    &.active {
+        background-image: url(../images/main/stamp-active.svg);
+    }
+}
+
+/* 즐겨찾는 매장 */
+.store-list{
+    .store-item{
+        @include flex($justify: space-between);
+        gap: var(--common-gap);
+        padding: var(--content-padding-small);
+        &+.store-item{
+            border-top: 1px solid $color-gray-e;
+        }
+    }
+    .store-content-bx{
+        @include flex();
+        gap: var(--common-gap);
+    }
+    .store-img-bx{
+        aspect-ratio: 1/1;
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--content-border-radius);
+        img{
+            width: 100%;
+        }
+    }
+}
+
+/* 팝업 */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color-black, 0.7);
+    z-index: 9999;
+    display: none;
+    align-items: end;
+    justify-content: center;
+    overflow: hidden;
+
+    &.active {
+        .popup-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    &-top-bx {
+        @include flex($justify: space-between);
+    }
+
+    &-bottom-bx {
+        margin: 16px 0;
+    }
+
+    &-down-bx {
+        border-radius: var(--border-radius-small);
+        border: 1px solid $color-gray-e;
+        @include flex($justify: space-between);
+        position: relative;
+        overflow: hidden;
+
+        >div {
+            height: 72px;
+            cursor: pointer;
+        }
+
+        &+.popup-down-bx {
+            margin-top: var(--common-gap-small);
+        }
+
+        .left-bx {
+            width: calc(100% - 72px);
+            padding-left: 20px;
+            @include flex();
+        }
+
+        .right-bx {
+            width: 72px;
+            @include flex($justify: center);
+            background: $color-gray-e;
+        }
+    }
+}
+
+.popup-content {
+    position: relative;
+    width: 100%;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all .3s $animation-timing;
+
+    .container {
+        background: $color-white;
+        padding: 24px 16px 32px;
+        border-radius: var(--content-border-radius);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        height: fit-content;
+    }
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+
+    &.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

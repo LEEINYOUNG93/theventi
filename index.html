@@ -6,7 +6,7 @@
     <!-- ( < IE10 ) -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
     <!-- 사이트 기본설정 영역 START -->
     <!-- SEO -->
@@ -58,6 +58,10 @@
     <!-- S : 헤더-->
     <div include-html="./include/header.html"></div>
     <!-- E : 헤더-->
+    <!-- S : 헤더-->
+    <div include-html="./include/pick-up-store.html"></div>
+    <div include-html="./include/pick-up-addr.html"></div>
+    <!-- E : 헤더-->
     <main class="main" id="contents">
         <!-- S : 메인비주얼 -->
         <section class="main-visual">
@@ -91,7 +95,7 @@
             <div class="container">
                 <ul class="main_icon_list">
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="javascript:void(0);" class="pickup--open">
                             <img src="./assets/images/main/main_icon_1.svg" alt="픽업주문" loading="lazy">
                             <p data-font="font_14">픽업주문</p>
                         </a>
@@ -112,6 +116,7 @@
             </div>
         </section>
         <!-- E : 메인아이콘 -->
+
         <!-- S : 오늘의쿠폰 -->
         <section class="main-section-2">
             <div class="container">
@@ -122,14 +127,35 @@
                     <div class="coupon-img">
                         <img src="./assets/images/main/coupon-img.png" alt="쿠폰이미지" loading="lazy">
                     </div>
-                    <div class="download-bx">
+                    <div class="download-bx" data-toggle="popup" data-target="#popup1">
                         <p data-font="font_14" data-font-weight="bold">쿠폰다운</p>
                         <img src="./assets/images/main/download-icon.svg" alt="다운로드 아이콘" loading="lazy">
                     </div>
                 </div>
             </div>
+
+            <!-- S : 로그인후 - 쿠폰 -->
+            <div class="main-coupon-list">
+                <div class="container">
+                    <div class="flex-bx">
+                        <div class="left-bx">
+                            <p data-font="font_16" data-font-weight="semibold">4월에도 맛있게 할인 받자!</p>
+                            <p class="dec-1" data-font="font_12">라떼 3종과 프라페 2종<br>
+                                500원 할인 쿠폰 받아가세요.</p>
+                        </div>
+                        <div class="right-bx">
+                            <button type="button" class="coupon-down-btn">
+                                <img src="./assets/images/main/download_icon_w.svg" alt="쿠폰다운 버튼" loading="lazy">
+                                <span data-font="font_14" data-font-weight="bold" data-color="white">쿠폰다운</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- E : 로그인후 - 쿠폰 -->
         </section>
         <!-- E : 오늘의쿠폰 -->
+
         <!-- S : 메인이벤트 -->
         <section class="main-section-3">
             <div class="container">
@@ -177,14 +203,15 @@
             </div>
         </section>
         <!-- E : 메인이벤트 -->
+
         <!-- S : 추천메뉴 -->
         <section class="main-section-4">
             <div class="container">
                 <div class="top-bx">
                     <p data-font="font_18" data-font-weight="bold">추천메뉴</p>
-                    <div class="location-bx">
+                    <div class="common-flex-btn-bx location-bx">
                         <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘" loading="lazy">
-                        <p class="location-txt">신정네거리역점 <span>291m</span></p>
+                        <p class="small-txt">신정네거리역점 <span>291m</span></p>
                         <img src="./assets/images/main/point-more-btn.svg" alt="위치 더보기 버튼" loading="lazy">
                     </div>
                 </div>
@@ -222,19 +249,131 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="swiper-control-bx">
-                            <div class="swiper-pagination"></div>
-                        </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </section>
         <!-- E : 추천메뉴 -->
+
+        <!-- S : 로그인후 - 최근주문리스트 -->
+        <section class="main-section-5">
+            <div class="container">
+                <div class="top-bx">
+                    <p data-font="font_18" data-font-weight="bold">최근 주문 리스트</p>
+                    <div class="allmenu-bx common-flex-btn-bx">
+                        <p class="small-txt">더보기</p>
+                        <img src="./assets/images/main/point-more-btn.svg" alt="위치 더보기 버튼" loading="lazy">
+                    </div>
+                </div>
+                <div class="bottom-bx">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="main-item-box">
+                                    <div class="item-box-top">
+                                        <div class="beverage-bx">
+                                            <img src="./assets/images/main/beverage_4.png" alt="음료이미지" loading="lazy">
+                                        </div>
+                                        <div class="txt-bx">
+                                            <p data-font="font_16" data-font-weight="bold" class="color-60">아이스 아메리카노
+                                            </p>
+                                            <p class="sort-txt color-60" data-font="font_14">
+                                                <span>ICED</span>
+                                                <i></i>
+                                                <span>Venti</span>
+                                            </p>
+                                        </div>
+                                        <div class="like-btn-bx">
+                                            <button type="button" class="like-btn" data-toggle="toggle"></button>
+                                        </div>
+                                    </div>
+                                    <div class="item-box-bottom">
+                                        <div class="common-flex-btn-bx location-bx">
+                                            <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘"
+                                                loading="lazy">
+                                            <p class="small-txt">신정네거리역점</p>
+                                        </div>
+                                        <a href="javascript:void(0);" class="common--btn-type order-btn">
+                                            바로 주문하기
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main-item-box">
+                                    <div class="item-box-top">
+                                        <div class="beverage-bx">
+                                            <img src="./assets/images/main/beverage_4.png" alt="음료이미지" loading="lazy">
+                                        </div>
+                                        <div class="txt-bx">
+                                            <p data-font="font_16" data-font-weight="bold" class="color-60">아이스 아메리카노
+                                            </p>
+                                            <p class="sort-txt color-60" data-font="font_14">
+                                                <span>ICED</span>
+                                                <i></i>
+                                                <span>Venti</span>
+                                            </p>
+                                        </div>
+                                        <!-- main.js 참고 -->
+                                        <div class="like-btn-bx">
+                                            <button type="button" class="like-btn" data-toggle="toggle"></button>
+                                        </div>
+                                    </div>
+                                    <div class="item-box-bottom">
+                                        <div class="common-flex-btn-bx location-bx">
+                                            <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘"
+                                                loading="lazy">
+                                            <p class="small-txt">신정네거리역점</p>
+                                        </div>
+                                        <a href="javascript:void(0);" class="common--btn-type order-btn">
+                                            바로 주문하기
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- E : 로그인후 - 최근주문리스트 -->
     </main>
+
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <div class="container">
+                <div class="popup-top-bx">
+                    <p data-font="font_16" data-font-weight="bold">오늘의 쿠폰</p>
+                    <button class="popup-close">
+                        <img src="./assets/images/main/close-btn-g.svg" alt="팝업 닫기버튼">
+                    </button>
+                </div>
+                <div class="popup-bottom-bx">
+                    <div class="popup-down-bx">
+                        <div class="left-bx">
+                            <p data-font="font_15" data-font-weight="semibold">(아이스)아메리카노 사이즈 up</p>
+                        </div>
+                        <div class="right-bx">
+                            <img src="./assets/images/main/download-icon.svg" alt="다운로드 버튼">
+                        </div>
+                    </div>
+                    <div class="popup-down-bx">
+                        <div class="left-bx">
+                            <p data-font="font_15" data-font-weight="semibold">밸런스 쉐이크밀 3종 500원 할인</p>
+                        </div>
+                        <div class="right-bx">
+                            <img src="./assets/images/main/download-icon.svg" alt="다운로드 버튼">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- S : 푸터-->
     <div include-html="./include/footer.html"></div>
     <!-- E : 푸터-->
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nuaaup38gb"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 
