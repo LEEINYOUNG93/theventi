@@ -8,6 +8,18 @@
     @include flex($justify: center);
     transition: all .3s $animation-timing;
 
+    &.active {
+        .header-top {
+            background: $color-white;
+
+            .sidebar--open,
+            .sidebar--alert,
+            .sidebar--qr {
+                color: $color-primary;
+            }
+        }
+    }
+
     &-inner {
         width: 100%;
     }
@@ -17,10 +29,21 @@
         background: $color-primary;
         height: $nav-height;
         padding-top: 20px;
+
+        .flex-bx {
+            @include flex();
+            gap: 16px;
+        }
     }
 
     &.scrolled {
         z-index: 100;
+    }
+
+    .sidebar--open,
+    .sidebar--alert,
+    .sidebar--qr {
+        color: $color-white;
     }
 }
 
@@ -170,6 +193,12 @@
     @include flex($justify: center);
     position: relative;
     background: $color-white;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 100;
 
     &::before {
         content: "";
@@ -190,15 +219,75 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         width: 100%;
+        max-height: 155px;
+
+        &.active {
+            height: calc(100vh - 64px);
+            max-height: 100%;
+
+            .footer-login-off {
+                .top-bx {
+                    p {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .updown-btn {
+                transform: rotate(180deg);
+            }
+
+            .bottom-bx {
+                display: flex;
+                height: calc(100vh - 100px);
+            }
+        }
     }
 
-    &-login {
-        background-image: url(../images/main/up_btn.svg);
-        @include background($position: center right, $size: 12px 6px);
+    &-login-on,
+    &-login-off {
+        .top-bx {
+            @include flex($justify: space-between);
+
+            p {
+                opacity: 1;
+            }
+        }
+
+        .updown-btn {
+            @include flex($justify: center);
+            transition: all .3s $animation-timing;
+            width: 24px;
+            height: 24px;
+        }
 
         span {
             margin: 0 4px;
             display: inline-block;
+        }
+    }
+
+    &-login-off {
+        .bottom-bx {
+            display: none;
+            transition: all .3s $animation-timing;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+
+            .membership-login-btn {
+                width: 100%;
+                height: 60px;
+                border-radius: var(--border-radius-small);
+                @include flex($justify: center);
+                background: $color-white;
+                color: $color-primary;
+                border-radius: var(--border-radius-small);
+                border: 1px solid #7B00A0;
+                font-weight: bold;
+            }
         }
     }
 
@@ -247,6 +336,18 @@
 
     &-icon-content-list {
         margin-top: var(--common-gap);
+        .scroll-bx{
+            overflow-y: auto;
+            max-height: 75vh;
+
+            &::-webkit-scrollbar {
+                width: 2px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: transparent;
+            }
+        }
 
         .content-bx {
             background: $color-white;
@@ -281,7 +382,8 @@
                 color: $color-primary-2;
                 position: relative;
                 padding-left: 8px;
-                &::before{
+
+                &::before {
                     content: "";
                     width: 5px;
                     height: 1px;
@@ -293,8 +395,65 @@
             }
 
             li+li {
-                margin-top: var(--common-gap-small);     
+                margin-top: var(--common-gap-small);
             }
         }
+    }
+}
+
+/* 선택권한 */
+.intro-area {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    @include flex($justify: center);
+    background: #fff;
+
+    .logo-bx {
+        @include flex($justify: center);
+    }
+
+    .intro-dec {
+        margin: 40px 0 32px 0;
+        line-height: 1.5;
+    }
+
+    .intro-select-item {
+        li {
+            margin-top: 16px;
+            @include flex();
+            gap: 8px;
+        }
+
+        .color-60 {
+            margin-top: 6px;
+        }
+
+        .icon-bx {
+            img {
+                aspect-ratio: 1/1;
+            }
+        }
+    }
+
+    .info-txt-bx {
+        @include flex($justify: center);
+        border-radius: var(--border-radius-small);
+        padding: 16px;
+        background: $color-primary-6;
+        margin: 28px 0 34px 0;
+    }
+
+    .intro-next-btn {
+        width: 100%;
+        height: 60px;
+        border-radius: var(--border-radius-small);
+        @include flex($justify: center);
+        background: $color-primary;
+        color: $color-white;
+        font-weight: bold;
     }
 }

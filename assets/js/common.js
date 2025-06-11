@@ -236,6 +236,9 @@ document.addEventListener("DOMContentLoaded", function () {
       $(".tab-header li").removeClass("active");
       $(this).addClass("active");
 
+      $(".header").addClass("active");
+      $(".footer-inner").addClass("active");
+
       $(".tab-content").removeClass("active").hide();
 
       const $target = $('.tab-content[data-tab="' + tabId + '"]');
@@ -244,6 +247,52 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         $target.addClass("active");
       }, 10);
+    });
+
+    //푸터 고정영역
+
+    $(".footer-login-on .updown-btn").on("click", function () {
+      const $parent = $(this).closest(".footer-inner");
+      const isActive = $parent.hasClass("active");
+      
+      $parent.toggleClass("active");
+
+      if (!isActive) {
+        if ($(".tab-header li.active").length === 0) {
+          const $firstTab = $(".tab-header li").first();
+          const tabId = $firstTab.data("tab");
+
+          $(".tab-header li").removeClass("active");
+          $firstTab.addClass("active");
+          $(".header").addClass("active");
+          $(".footer-inner").addClass("active");
+
+          $(".tab-content").removeClass("active").hide();
+          const $target = $('.tab-content[data-tab="' + tabId + '"]');
+          $target.show();
+          setTimeout(() => {
+            $target.addClass("active");
+          }, 10);
+        }
+
+        $("body").css("overflow", "hidden");
+      } else {
+        $(".tab-header li").removeClass("active");
+        $(".tab-content").removeClass("active").hide();
+        $(".header").removeClass("active");
+        $(".footer-inner").removeClass("active");
+        $("body").css("overflow", "");
+      }
+    });
+
+    $(".footer-login-off .updown-btn").on("click", function () {
+      const $parent = $(this).closest(".footer-inner");
+      $parent.toggleClass("active");
+      if ($parent.hasClass("active")) {
+        $("body").css("overflow", "hidden");
+      } else {
+        $("body").css("overflow", "");
+      }
     });
 
     //푸터 아이콘클릭
@@ -272,6 +321,11 @@ document.addEventListener("DOMContentLoaded", function () {
           input.focus();
         }
       });
+    });
+
+    //선택권한(고객확인용) 개발시 해당 스크립트 삭제부탁드립니다.
+    $(".intro-next-btn").click(function () {
+      $(".intro-area").hide();
     });
   });
 });

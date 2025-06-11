@@ -55,13 +55,19 @@
 </head>
 
 <body class="main-body">
+    <!-- S : 선택적 접근 권한 안내 화면 -->
+    <div include-html="./include/intro.html"></div>
+    <!-- E : 선택적 접근 권한 안내 화면 -->
+
     <!-- S : 헤더-->
     <div include-html="./include/header.html"></div>
     <!-- E : 헤더-->
-    <!-- S : 헤더-->
+
+    <!-- S : 주문하기 -->
     <div include-html="./include/pick-up-store.html"></div>
     <div include-html="./include/pick-up-addr.html"></div>
-    <!-- E : 헤더-->
+    <!-- E : 주문하기 -->
+
     <main class="main" id="contents">
         <!-- S : 메인비주얼 -->
         <section class="main-visual">
@@ -266,71 +272,116 @@
                     </div>
                 </div>
                 <div class="bottom-bx">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="main-item-box">
-                                    <div class="item-box-top">
-                                        <div class="beverage-bx">
-                                            <img src="./assets/images/main/beverage_4.png" alt="음료이미지" loading="lazy">
-                                        </div>
-                                        <div class="txt-bx">
-                                            <p data-font="font_16" data-font-weight="bold" class="color-60">아이스 아메리카노
-                                            </p>
-                                            <p class="sort-txt color-60" data-font="font_14">
-                                                <span>ICED</span>
-                                                <i></i>
-                                                <span>Venti</span>
-                                            </p>
-                                        </div>
-                                        <div class="like-btn-bx">
-                                            <button type="button" class="like-btn" data-toggle="toggle"></button>
-                                        </div>
-                                    </div>
-                                    <div class="item-box-bottom">
-                                        <div class="common-flex-btn-bx location-bx">
-                                            <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘"
-                                                loading="lazy">
-                                            <p class="small-txt">신정네거리역점</p>
-                                        </div>
-                                        <a href="javascript:void(0);" class="common--btn-type order-btn">
-                                            바로 주문하기
-                                        </a>
-                                    </div>
-                                </div>
+                    <div class="main-item-box">
+                        <div class="item-box-top">
+                            <div class="beverage-bx">
+                                <img src="./assets/images/main/beverage_4.png" alt="음료이미지" loading="lazy">
                             </div>
-                            <div class="swiper-slide">
-                                <div class="main-item-box">
-                                    <div class="item-box-top">
-                                        <div class="beverage-bx">
-                                            <img src="./assets/images/main/beverage_4.png" alt="음료이미지" loading="lazy">
-                                        </div>
-                                        <div class="txt-bx">
-                                            <p data-font="font_16" data-font-weight="bold" class="color-60">아이스 아메리카노
-                                            </p>
-                                            <p class="sort-txt color-60" data-font="font_14">
-                                                <span>ICED</span>
-                                                <i></i>
-                                                <span>Venti</span>
-                                            </p>
-                                        </div>
-                                        <!-- main.js 참고 -->
-                                        <div class="like-btn-bx">
-                                            <button type="button" class="like-btn" data-toggle="toggle"></button>
-                                        </div>
-                                    </div>
-                                    <div class="item-box-bottom">
-                                        <div class="common-flex-btn-bx location-bx">
-                                            <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘"
-                                                loading="lazy">
-                                            <p class="small-txt">신정네거리역점</p>
-                                        </div>
-                                        <a href="javascript:void(0);" class="common--btn-type order-btn">
-                                            바로 주문하기
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="txt-bx">
+                                <p data-font="font_16" data-font-weight="bold" class="color-60">아이스 아메리카노
+                                </p>
+                                <p class="sort-txt color-60" data-font="font_14">
+                                    <span>ICED</span>
+                                    <i></i>
+                                    <span>Venti</span>
+                                </p>
                             </div>
+                            <div class="like-btn-bx">
+                                <button type="button" class="like-btn" data-toggle="toggle"></button>
+                            </div>
+                        </div>
+                        <div class="item-box-bottom">
+                            <div class="common-flex-btn-bx location-bx">
+                                <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘" loading="lazy">
+                                <p class="small-txt">신정네거리역점</p>
+                            </div>
+                            <a href="javascript:void(0);" class="common--btn-type order-btn">
+                                바로 주문하기
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main-item-box">
+                        <div class="item-box-top">
+                            <div class="beverage-bx">
+                                <img src="./assets/images/main/beverage_4.png" alt="음료이미지" loading="lazy">
+                            </div>
+                            <div class="txt-bx">
+                                <p data-font="font_16" data-font-weight="bold" class="color-60">아이스 아메리카노
+                                </p>
+                                <p class="sort-txt color-60" data-font="font_14">
+                                    <span>ICED</span>
+                                    <i></i>
+                                    <span>Venti</span>
+                                </p>
+                            </div>
+                            <div class="like-btn-bx">
+                                <button type="button" class="like-btn" data-toggle="toggle"></button>
+                            </div>
+                        </div>
+                        <div class="item-box-bottom">
+                            <div class="common-flex-btn-bx location-bx">
+                                <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘" loading="lazy">
+                                <p class="small-txt">신정네거리역점</p>
+                            </div>
+                            <a href="javascript:void(0);" class="common--btn-type order-btn">
+                                바로 주문하기
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main-item-box">
+                        <div class="item-box-top">
+                            <div class="beverage-bx">
+                                <img src="./assets/images/main/beverage_4.png" alt="음료이미지" loading="lazy">
+                            </div>
+                            <div class="txt-bx">
+                                <p data-font="font_16" data-font-weight="bold" class="color-60">아이스 아메리카노
+                                </p>
+                                <p class="sort-txt color-60" data-font="font_14">
+                                    <span>ICED</span>
+                                    <i></i>
+                                    <span>Venti</span>
+                                </p>
+                            </div>
+                            <div class="like-btn-bx">
+                                <button type="button" class="like-btn" data-toggle="toggle"></button>
+                            </div>
+                        </div>
+                        <div class="item-box-bottom">
+                            <div class="common-flex-btn-bx location-bx">
+                                <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘" loading="lazy">
+                                <p class="small-txt">신정네거리역점</p>
+                            </div>
+                            <a href="javascript:void(0);" class="common--btn-type order-btn">
+                                바로 주문하기
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main-item-box">
+                        <div class="item-box-top">
+                            <div class="beverage-bx">
+                                <img src="./assets/images/main/beverage_4.png" alt="음료이미지" loading="lazy">
+                            </div>
+                            <div class="txt-bx">
+                                <p data-font="font_16" data-font-weight="bold" class="color-60">아이스 아메리카노
+                                </p>
+                                <p class="sort-txt color-60" data-font="font_14">
+                                    <span>ICED</span>
+                                    <i></i>
+                                    <span>Venti</span>
+                                </p>
+                            </div>
+                            <div class="like-btn-bx">
+                                <button type="button" class="like-btn" data-toggle="toggle"></button>
+                            </div>
+                        </div>
+                        <div class="item-box-bottom">
+                            <div class="common-flex-btn-bx location-bx">
+                                <img src="./assets/images/main/location-icon.svg" alt="위치 아이콘" loading="lazy">
+                                <p class="small-txt">신정네거리역점</p>
+                            </div>
+                            <a href="javascript:void(0);" class="common--btn-type order-btn">
+                                바로 주문하기
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -373,7 +424,7 @@
     <!-- S : 푸터-->
     <div include-html="./include/footer.html"></div>
     <!-- E : 푸터-->
-    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nuaaup38gb"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=nuaaup38gb"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 

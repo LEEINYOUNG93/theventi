@@ -50,19 +50,4 @@ $(document).ready(function () {
       },
     }
   );
-
-  //주문리스트
-  var orderSwiper = new Swiper(".main-section-5 .bottom-bx .swiper-container", {
-    loop: true,
-    loopedSlides: 1,
-    slidesPerView: 1,
-    centeredSlides: true,
-    spaceBetween: 8,
-    effect: "slide",
-    speed: 1000,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-  });
 });
