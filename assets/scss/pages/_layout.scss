@@ -4,7 +4,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 245;
     @include flex($justify: center);
     transition: all .3s $animation-timing;
 
@@ -81,6 +81,7 @@
         overflow-x: hidden;
         padding-bottom: 40px;
         height: calc(100vh - #{$nav-height});
+        background: $color-white;
 
         &::-webkit-scrollbar {
             width: 5px;
@@ -106,12 +107,17 @@
         padding: var(--content-padding);
     }
 
+    .btn-bx{
+        display: flex;
+        gap: 8px;
+    }
+
     .sidebar--login {
         margin-top: 16px;
 
         span {
             @include flex($justify: center);
-            width: 71px;
+            padding: 0 16px;
             height: 30px;
             border-radius: 50px;
             border: 1px solid #7B00A0;
@@ -197,7 +203,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: calc(100% - 1px);
     z-index: 100;
 
     &::before {
@@ -359,7 +365,6 @@
             padding: 13.5px 16px;
             border-radius: var(--border-radius-small);
             background: $color-primary-6;
-            margin: 16px 0 24px 0;
         }
 
         .stamp-item {
@@ -401,6 +406,65 @@
     }
 }
 
+/* 쿠폰 탭 */
+.coupon-tab{
+    &-header{
+        @include flex($justify: space-between);
+        margin: 16px 0;
+        border-bottom: 1px solid #E9E8E8;
+        li{
+            padding: 16px;
+            font-size: 15px;
+            color: rgba($color-black, 0.6);
+            position: relative;
+            &.active{
+                &::after{
+                    opacity: 1;
+                }
+            }
+            &::after{
+                content: "";
+                width: 100%;
+                height: 2px;
+                background: $color-primary;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: 1;
+                opacity: 0;
+                transition: all .3s $animation-timing;
+            }
+        }
+    }
+    &-body{
+        margin-bottom: 28px;
+    }
+    &-content{
+        padding: 19px 16px;
+        border: 1px solid #F4F4F4;
+        border-radius: var(--border-radius-small);
+        background: $color-primary-6;
+        &+.coupon-tab-content{
+            margin-top: 16px;
+        }
+    }
+    &-info{
+        @include flex($align: end, $justify: space-between);
+        .info{
+            font-size: 14px;
+        }
+        .d-day{
+            padding: 4px 8px;
+            @include flex($justify: center);
+            border-radius: var(--content-border-radius);
+            background: #E9E8E8;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+}
+
 /* 선택권한 */
 .intro-area {
     position: fixed;
@@ -411,6 +475,8 @@
     z-index: 999;
     @include flex($justify: center);
     background: #fff;
+    overflow-y: auto;
+    padding: 24px 0;
 
     .logo-bx {
         @include flex($justify: center);

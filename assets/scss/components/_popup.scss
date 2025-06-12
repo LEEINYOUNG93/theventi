@@ -1,0 +1,267 @@
+/* 팝업 */
+#periodPopup,
+#logoutPopup {
+    align-items: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color-black, 0.7);
+    z-index: 9999;
+    display: none;
+    align-items: end;
+    justify-content: center;
+    overflow: hidden;
+
+    &.active {
+        .popup-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .popup-center-content {
+            opacity: 1;
+        }
+    }
+
+    &.open {
+        display: flex;
+
+        .popup-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .popup-center-content {
+            opacity: 1;
+        }
+    }
+
+    &-top-bx {
+        @include flex($justify: space-between);
+    }
+
+    &-bottom-bx {
+        margin: 16px 0;
+    }
+    &-title-bx{
+        
+    }
+
+    &-down-bx {
+        border-radius: var(--border-radius-small);
+        border: 1px solid $color-gray-e;
+        @include flex($justify: space-between);
+        position: relative;
+        overflow: hidden;
+
+        >div {
+            height: 72px;
+            cursor: pointer;
+        }
+
+        &+.popup-down-bx {
+            margin-top: var(--common-gap-small);
+        }
+
+        .left-bx {
+            width: calc(100% - 72px);
+            padding-left: 20px;
+            @include flex();
+        }
+
+        .right-bx {
+            width: 72px;
+            @include flex($justify: center);
+            background: $color-gray-e;
+        }
+    }
+
+    .popup-content {
+        position: relative;
+        width: 100%;
+        max-width: 360px;
+        padding: 0 16px;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all .3s $animation-timing;
+
+        .container {
+            background: $color-white;
+            padding: 24px 16px 32px;
+            border-radius: var(--content-border-radius);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            height: fit-content;
+        }
+    }
+
+    .popup-center-content {
+        position: relative;
+        width: 100%;
+        max-width: 360px;
+        padding: 0 16px;
+        opacity: 0;
+        transition: all .3s $animation-timing;
+
+        .container {
+            background: $color-white;
+            padding: 24px 16px 32px;
+            border-radius: var(--content-border-radius);
+            height: fit-content;
+        }
+    }
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+
+    &.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//날짜선택
+.ui-datepicker {
+    z-index: 9999 !important;
+}
+
+.ui-widget-header {
+    background: $color-white !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    border: none !important;
+}
+
+.ui-widget.ui-widget-content {
+    border: none !important;
+}
+
+.ui-datepicker th {
+    font-weight: normal !important;
+    font-size: 15px !important;
+    color: $color-black !important;
+}
+
+.ui-datepicker td.sunday a { color:#FF2744 !important;}
+
+.ui-datepicker td a {
+    border: none !important;
+    color: $color-black !important;
+    font-size: 14px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal !important;
+}
+
+.ui-datepicker td.range a {
+    background: $color-primary !important;
+    color: $color-white !important;
+}
+
+.ui-widget-header .ui-icon {
+    background: none !important;
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+.ui-datepicker-prev {
+    left: 0 !important;
+}
+
+.ui-datepicker-next {
+    right: 0 !important;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    @include flex($justify: center);
+    transition: none !important;
+    transform: none !important;
+    margin: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+.ui-datepicker-prev-hover,
+.ui-datepicker-next-hover,
+.ui-state-hover {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    cursor: default !important;
+}
+
+.ui-priority-secondary {
+    opacity: 0.2 !important;
+}
+
+.ui-datepicker-prev::before {
+    content: '';
+    color: $color-black;
+    @include background('../images/main/prev_btn.svg', $position: center, $size: 6px 12px);
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.ui-datepicker-next::before {
+    content: '';
+    color: $color-black;
+    @include background('../images/main/next_btn.svg', $position: center, $size: 6px 12px);
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.datepicker{
+    margin-bottom: 111px;
+}
+
+.datepicker-btn {
+    display: flex;
+    gap: 5px;
+
+    >button {
+        flex: 1;
+        border-radius: var(--border-radius-small);
+        @include flex($justify: center);
+        height: 48px;
+
+        &.cancel-close,
+        &.popup-close {
+            background: $color-primary;
+            color: $color-white;
+            border: 1px solid #7B00A0;
+        }
+
+        &.apply-btn,
+        &.confirm-btn {
+            border: 1px solid #E9E8E8;
+            background: $color-white;
+        }
+    }
+}

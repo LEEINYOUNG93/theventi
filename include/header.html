@@ -68,17 +68,34 @@
             <div class="sidebar-body">
                 <div class="sidebar-login">
                     <div class="container">
-                        <div class="login-bx">
-                            <p class="title-1" data-font="font_20">로그인 해주세요.</p>
+                        <!-- 로그인 전 style="display:none" 삭제 -->
+                        <div class="login-bx off" style="display:none">
+                            <p class="color-40" data-font="font_20">로그인 해주세요.</p>
                             <button type="button" class="sidebar--login" aria-controls="login" aria-expanded="false"
                                 aria-label="사이드바 로그인 버튼">
                                 <span class="" data-color="point_1" data-font="font_14"
                                     data-font-weight="medium">로그인</span>
                             </button>
                         </div>
+                        <!-- 로그인 후 -->
+                        <div class="login-bx on">
+                            <p data-font="font_20">안녕하세요. 홍길동님,</p>
+                            <div class="btn-bx">
+                                <button type="button" class="sidebar--login" aria-controls="login" aria-expanded="false"
+                                    aria-label="사이드바 내 정보 버튼">
+                                    <span class="" data-color="point_1" data-font="font_14" data-font-weight="medium">내
+                                        정보</span>
+                                </button>
+                                <button type="button" class="sidebar--login" aria-controls="login" aria-expanded="false"
+                                    aria-label="사이드바 로그아웃 버튼" data-toggle="popup" data-target="#logoutPopup">
+                                    <span class="" data-color="point_1" data-font="font_14"
+                                        data-font-weight="medium">로그아웃</span>
+                                </button>
+                            </div>
+                        </div>
                         <ul class="sidebar_icon_list">
                             <li class="sidebar_icon_item">
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" class="stamp-list-btn">
                                     <img src="./assets/images/main/stamp_icon.png" alt="스탬프">
                                     <p data-font="font_14">스탬프</p>
                                 </a>
@@ -151,3 +168,21 @@
         <!-- E : 사이드바 -->
     </div>
 </header>
+
+<div id="logoutPopup" class="popup">
+    <div class="popup-center-content">
+        <div class="container">
+            <div class="popup-title-bx text-center">
+                <p data-font="font_18" data-font-weight="semibold">로그아웃</p>
+                <p class="color-60 mt-4" data-font="font_16">로그아웃 하시겠습니까?</p>
+            </div>
+            <div class="popup-bottom-bx mt-6">
+                <div class="datepicker-btn">
+                        <button type="button" class="popup-close color-60" data-font="font_14"
+                            data-font-weight="bold">취소</button>
+                        <button type="button" class="confirm-btn" data-font="font_14" data-font-weight="bold">확인</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

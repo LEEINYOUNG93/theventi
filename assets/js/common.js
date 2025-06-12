@@ -91,6 +91,115 @@ function initSidebar() {
   });
 }
 
+function datePicker() {
+  let startDate = null;
+  let endDate = null;
+
+  // 달력 초기화
+  $(".datepicker").datepicker({
+    numberOfMonths: 1,
+    dateFormat: "yy.m.d",
+    monthNamesShort: [
+      "1월",
+      "2월",
+      "3월",
+      "4월",
+      "5월",
+      "6월",
+      "7월",
+      "8월",
+      "9월",
+      "10월",
+      "11월",
+      "12월",
+    ],
+    monthNames: [
+      "1월",
+      "2월",
+      "3월",
+      "4월",
+      "5월",
+      "6월",
+      "7월",
+      "8월",
+      "9월",
+      "10월",
+      "11월",
+      "12월",
+    ],
+    dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+
+    showOtherMonths: true,
+    selectOtherMonths: true,
+
+    onSelect: function (dateText, inst) {
+      const selectedDate = $(this).datepicker("getDate");
+
+      if (!startDate || endDate) {
+        startDate = selectedDate;
+        endDate = null;
+      } else if (selectedDate > startDate) {
+        endDate = selectedDate;
+      } else {
+        startDate = selectedDate;
+        endDate = null;
+      }
+
+      $(this).datepicker("refresh");
+    },
+    beforeShowDay: function (date) {
+      const classes = [];
+
+      if (date.getDay() === 0) {
+        classes.push("sunday");
+      }
+
+      if (!startDate) {
+        return [true, classes.join(" ")];
+      }
+
+      if (startDate && !endDate && date.getTime() === startDate.getTime()) {
+        classes.push("range");
+      }
+
+      if (startDate && endDate && date >= startDate && date <= endDate) {
+        classes.push("range");
+      }
+
+      return [true, classes.join(" ")];
+    },
+  });
+
+  $(".apply-btn").on("click", function () {
+    if (!startDate || !endDate) {
+      alert("시작일과 종료일을 모두 선택해주세요.");
+      return;
+    }
+
+    const formattedStart = $.datepicker.formatDate("yy.m.d", startDate);
+    const formattedEnd = $.datepicker.formatDate("yy.m.d", endDate);
+
+    $(".period-input-bx").text(`${formattedStart} ~ ${formattedEnd}`);
+    $("#periodPopup").removeClass("open");
+  });
+
+  $(".cancel-close").on("click", function () {
+    startDate = null;
+    endDate = null;
+    $(".datepicker").datepicker("setDate", null);
+    $(".datepicker").datepicker("refresh");
+    $("#periodPopup").removeClass("open");
+  });
+
+  $(".period-change-btn").on("click", function () {
+    startDate = null;
+    endDate = null;
+    $(".datepicker").datepicker("setDate", null);
+    $(".datepicker").datepicker("refresh");
+    $("#periodPopup").addClass("open");
+  });
+}
+
 //픽업주문
 function initMap() {
   const zoomInBtn = document.querySelector(".zoom-in");
@@ -161,10 +270,11 @@ function initMap() {
   resizeMap();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
   includeHTML(function () {
     initSidebar();
     initMap();
+    datePicker();
     AOS.init({
       duration: 1200,
       once: true,
@@ -180,6 +290,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    //뒤로가기버튼
+    const mainVisual = $(".main-visual");
+
+    $(document).on("click", ".back-btn", function (e) {
+      e.preventDefault();
+
+      const $stampList = $(this).closest(".stamp-save-list");
+      $stampList.removeClass("active");
+      mainVisual.removeClass("active");
+    });
+
     //찜버튼
     $("[data-toggle=toggle]").on("click", function (e) {
       e.stopPropagation();
@@ -193,6 +314,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .find("[class^=icon-]")
         .toggleClass("active");
     });
+
+    // 달력
 
     //팝업
     $("[data-toggle=popup]").on("click", function (e) {
@@ -229,6 +352,15 @@ document.addEventListener("DOMContentLoaded", function () {
       $("body").css("overflow", "");
     });
 
+    $(".popup").on("click", ".confirm-btn", function () {
+      var $popup = $(this).closest(".popup");
+      $popup.removeClass("active");
+      setTimeout(() => {
+        $popup.css("display", "none");
+      }, 300);
+      $("body").css("overflow", "");
+    });
+
     //탭메뉴
     $(".tab-header li").on("click", function () {
       var tabId = $(this).data("tab");
@@ -246,6 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $target.show();
       setTimeout(() => {
         $target.addClass("active");
+        $("body").addClass("no-scroll");
       }, 10);
     });
 
@@ -254,7 +387,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".footer-login-on .updown-btn").on("click", function () {
       const $parent = $(this).closest(".footer-inner");
       const isActive = $parent.hasClass("active");
-      
+
       $parent.toggleClass("active");
 
       if (!isActive) {
@@ -296,31 +429,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     //푸터 아이콘클릭
-    document.querySelectorAll(".footer-icon-item li").forEach((item) => {
-      item.addEventListener("click", () => {
-        document.querySelectorAll(".footer-icon-item li").forEach((el) => {
-          el.classList.remove("active");
-        });
+    $(".footer-icon-item li").on("click", function () {
+      $(".footer-icon-item li").removeClass("active");
+      $(this).addClass("active");
+    });
 
-        item.classList.add("active");
-      });
+    //스탬프 새로고침 & 적립내역
+    $(".reload-close-btn").on("click", function () {
+      $(".reload-info-bx").hide();
+    });
+
+    $(".stamp-list-btn").on("click", function () {
+      $(".stamp-save-list").addClass("active");
+      $(".header").removeClass("active");
     });
 
     //검색어초기화
 
-    const resetButtons = document.querySelectorAll(".input-reset-btn");
+    $(".input-reset-btn").on("click", function () {
+      const $form = $(this).closest("form");
+      const $input = $form.find(".search-input");
 
-    resetButtons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        const form = btn.closest("form");
-        if (!form) return;
-
-        const input = form.querySelector(".search-input");
-        if (input) {
-          input.value = "";
-          input.focus();
-        }
-      });
+      if ($input.length) {
+        $input.val("").focus();
+      }
     });
 
     //선택권한(고객확인용) 개발시 해당 스크립트 삭제부탁드립니다.
