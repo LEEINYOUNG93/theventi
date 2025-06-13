@@ -48,7 +48,9 @@ function initSidebar() {
   const openButton = document.querySelector(".sidebar--open");
   const closeButton = document.querySelector(".sidebar--close");
   const mainVisual = document.querySelector(".main-visual");
+  const footer = document.querySelector(".footer");
   const pickupButtons = document.querySelectorAll(".pickup--open");
+  const deliveryButtons = document.querySelectorAll(".delivery--open");
   const pickupList = document.querySelector(".pickup-list");
   const backButtons = document.querySelectorAll(".pickup-list .back-btn");
 
@@ -57,6 +59,7 @@ function initSidebar() {
     !openButton ||
     !closeButton ||
     !pickupButtons ||
+    !deliveryButtons ||
     !pickupList
   ) {
     return;
@@ -65,6 +68,7 @@ function initSidebar() {
   openButton.addEventListener("click", () => {
     sidebar.classList.add("active");
     mainVisual.classList.add("active");
+    footer.classList.remove("active");
   });
 
   closeButton.addEventListener("click", () => {
@@ -76,7 +80,15 @@ function initSidebar() {
     button.addEventListener("click", () => {
       document
         .querySelector(".pickup-list.pickup-store")
-        /* .querySelector(".pickup-list.pickup-addr") 매장주소 페이지 */
+        .classList.add("active");
+      mainVisual.classList.add("active");
+    });
+  });
+
+  deliveryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      document
+        .querySelector(".pickup-list.pickup-addr")
         .classList.add("active");
       mainVisual.classList.add("active");
     });
@@ -270,11 +282,27 @@ function initMap() {
   resizeMap();
 }
 
+//탭 초기화
+function initTabGroups() {
+  $("[data-tab-group]").each(function () {
+    const $group = $(this);
+    const $firstTab = $group.find("[data-toggle=tab]").first();
+    const targetSelector = $firstTab.data("target");
+    const $targetContent = $(targetSelector);
+
+    if ($firstTab.length && $targetContent.length) {
+      $firstTab.addClass("active");
+      $targetContent.show().addClass("active");
+    }
+  });
+}
+
 $(document).ready(function () {
   includeHTML(function () {
     initSidebar();
     initMap();
     datePicker();
+    initTabGroups();
     AOS.init({
       duration: 1200,
       once: true,
@@ -297,8 +325,24 @@ $(document).ready(function () {
       e.preventDefault();
 
       const $stampList = $(this).closest(".stamp-save-list");
+      const $couponView = $(this).closest(".coupon-view");
+      const $couponRegister = $(this).closest(".coupon-register");
+      const $membershipInfo = $(this).closest(".membership-list");
+      const $alertInfo = $(this).closest(".alert-list");
+      const $loginArea = $(this).closest(".login-list");
       $stampList.removeClass("active");
+      $couponView.removeClass("active");
+      $couponRegister.removeClass("active");
+      $membershipInfo.removeClass("active");
+      $loginArea.removeClass("active");
+      $alertInfo.removeClass("active");
       mainVisual.removeClass("active");
+    });
+
+    //알림내역
+    $(".sidebar--alert").on("click", function () {
+      $(".alert-list").addClass("active");
+      $(".header").removeClass("active");
     });
 
     //찜버튼
@@ -314,8 +358,6 @@ $(document).ready(function () {
         .find("[class^=icon-]")
         .toggleClass("active");
     });
-
-    // 달력
 
     //팝업
     $("[data-toggle=popup]").on("click", function (e) {
@@ -361,25 +403,69 @@ $(document).ready(function () {
       $("body").css("overflow", "");
     });
 
-    //탭메뉴
+    //공통 탭메뉴
+
+    $("[data-toggle=tab]").on("click", function (e) {
+      e.preventDefault();
+
+      const $this = $(this);
+      const targetSelector = $this.data("target");
+      const $targetContent = $(targetSelector);
+      const $group = $this.closest("[data-tab-group]");
+      const group = $group.data("tab-group");
+
+      if (!targetSelector || !$targetContent.length) return;
+
+      const $allTabs = $group.find("[data-toggle=tab]");
+      const $allContents = $(".common-tab-item");
+
+      const isAlreadyActive = $this.hasClass("active");
+
+      if (isAlreadyActive) return;
+
+      $allTabs.removeClass("active");
+      $allContents.removeClass("active").hide();
+
+      $this.addClass("active");
+      $targetContent.show();
+
+      setTimeout(() => {
+        $targetContent.addClass("active");
+      }, 10);
+    });
+
+    //푸터 탭메뉴
     $(".tab-header li").on("click", function () {
       var tabId = $(this).data("tab");
 
+      if (tabId == 3) return;
+      var $target = $('.tab-content[data-tab="' + tabId + '"]');
+      var isActive = $(this).hasClass("active");
+
       $(".tab-header li").removeClass("active");
-      $(this).addClass("active");
-
-      $(".header").addClass("active");
-      $(".footer-inner").addClass("active");
-
       $(".tab-content").removeClass("active").hide();
 
-      const $target = $('.tab-content[data-tab="' + tabId + '"]');
+      if (!isActive) {
+        $(this).addClass("active");
+        $(".header").addClass("active");
+        $(".footer-inner").addClass("active");
 
-      $target.show();
-      setTimeout(() => {
-        $target.addClass("active");
-        $("body").addClass("no-scroll");
-      }, 10);
+        $target.css("display", "block");
+        setTimeout(() => {
+          $target.addClass("active");
+        }, 10);
+
+        $("body").css("overflow", "hidden");
+      } else {
+        $(".header").removeClass("active");
+        $(".footer-inner").removeClass("active");
+
+        setTimeout(() => {
+          $target.css("display", "none");
+        }, 300);
+
+        $("body").css("overflow", "");
+      }
     });
 
     //푸터 고정영역
@@ -428,6 +514,12 @@ $(document).ready(function () {
       }
     });
 
+    //로그인
+    $(".membership-login-btn").on("click", function () {
+      $(".login-list").addClass("active");
+      $(".header").removeClass("active");
+    });
+
     //푸터 아이콘클릭
     $(".footer-icon-item li").on("click", function () {
       $(".footer-icon-item li").removeClass("active");
@@ -442,6 +534,43 @@ $(document).ready(function () {
     $(".stamp-list-btn").on("click", function () {
       $(".stamp-save-list").addClass("active");
       $(".header").removeClass("active");
+    });
+
+    //쿠폰 등록&상세
+    $(".coupon-list-btn").on("click", function () {
+      $(".coupon-view").addClass("active");
+      $(".header").removeClass("active");
+    });
+
+    $(".coupon-tab-content").on("click", function () {
+      $(".coupon-view").addClass("active");
+      $(".header").removeClass("active");
+    });
+
+    $(".coupon-register-btn").on("click", function () {
+      $(".coupon-register").addClass("active");
+      $(".header").removeClass("active");
+    });
+
+    //멤버십 안내
+    $(".benefit-item").on("click", function () {
+      $(".membership-list").addClass("active");
+      $(".header").removeClass("active");
+      $(".gauge-bx").each(function () {
+        var $box = $(this);
+        var percent = parseFloat($box.data("percent")) || 0;
+
+        var $fill = $box.find(".gauge-fill");
+        var $marker = $box.find(".gauge-marker");
+
+        $fill.css("width", "0%");
+        $marker.css({ left: "0%", opacity: 0 });
+
+        setTimeout(() => {
+          $fill.css("width", percent + "%");
+          $marker.css({ left: percent + "%", opacity: 1 });
+        }, 100);
+      });
     });
 
     //검색어초기화

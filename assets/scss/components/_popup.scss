@@ -1,6 +1,7 @@
 /* 팝업 */
 #periodPopup,
-#logoutPopup {
+#logoutPopup,
+#barcodePopup {
     align-items: center;
 }
 
@@ -17,6 +18,7 @@
     align-items: end;
     justify-content: center;
     overflow: hidden;
+    transform: translateY(0);
 
     &.active {
         .popup-content {
@@ -49,9 +51,8 @@
     &-bottom-bx {
         margin: 16px 0;
     }
-    &-title-bx{
-        
-    }
+
+    &-title-bx {}
 
     &-down-bx {
         border-radius: var(--border-radius-small);
@@ -80,6 +81,24 @@
             @include flex($justify: center);
             background: $color-gray-e;
         }
+    }
+
+    .barcode-bx {
+        padding: 24px;
+        width: 100%;
+        border-radius: var(--border-radius-small);
+        background: $color-bg;
+
+        .img {
+            @include flex($justify: center);
+        }
+    }
+
+    .fix-btn {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        z-index: 1;
     }
 
     .popup-content {
@@ -153,7 +172,9 @@
     color: $color-black !important;
 }
 
-.ui-datepicker td.sunday a { color:#FF2744 !important;}
+.ui-datepicker td.sunday a {
+    color: #FF2744 !important;
+}
 
 .ui-datepicker td a {
     border: none !important;
@@ -237,7 +258,7 @@
     z-index: 1;
 }
 
-.datepicker{
+.datepicker {
     margin-bottom: 111px;
 }
 

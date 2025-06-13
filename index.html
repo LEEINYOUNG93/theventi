@@ -38,6 +38,8 @@
     <!-- Swiper -->
     <link href="./assets/css/swiper-bundle.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="./assets/css/style.css">
+
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,14 +69,34 @@
     <div include-html="./include/header.html"></div>
     <!-- E : 헤더-->
 
+    <!-- S : 알림내역 -->
+    <div include-html="./include/alert.html"></div>
+    <!-- E : 알림내역 -->
+
+    <!-- S : 로그인 -->
+    <div include-html="./membership/login.html"></div>
+    <!-- E : 로그인 -->
+
     <!-- S : 주문하기 -->
-    <div include-html="./include/pick-up-store.html"></div>
-    <div include-html="./include/pick-up-addr.html"></div>
+    <div include-html="./pickup/pick-up-store.html"></div>
+    <div include-html="./pickup/pick-up-addr.html"></div>
     <!-- E : 주문하기 -->
 
     <!-- S : 스탭프 적립내역 -->
-    <div include-html="./include/stamp-save.html"></div>
+    <div include-html="./stamp/stamp-save.html"></div>
     <!-- E : 스탭프 적립내역 -->
+
+    <!-- S : 쿠폰등록 -->
+    <div include-html="./coupon/coupon__view.html"></div>
+    <!-- E : 쿠폰등록 -->
+
+    <!-- S : 쿠폰상세 -->
+    <div include-html="./coupon/coupon__register.html"></div>
+    <!-- E : 쿠폰상세 -->
+
+    <!-- S : 멤버십 안내 -->
+    <div include-html="./include/membership.html"></div>
+    <!-- E : 멤버십 안내 -->
 
     <main class="main" id="contents">
         <!-- S : 메인비주얼 -->
@@ -82,6 +104,7 @@
             <div class="main-inner container">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
+                        <!-- 이미지권장 사이즈 328*400 -->
                         <div class="swiper-slide">
                             <a href="javascript:void(0);">
                                 <div class="image-bx">
@@ -108,6 +131,7 @@
         <section class="main-section-1">
             <div class="container">
                 <ul class="main_icon_list">
+                    <!-- 이미지권장 사이즈 40*40 -->
                     <li>
                         <a href="javascript:void(0);" class="pickup--open">
                             <img src="./assets/images/main/main_icon_1.svg" alt="픽업주문" loading="lazy">
@@ -115,7 +139,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="javascript:void(0);" class="delivery--open">
                             <img src="./assets/images/main/main_icon_2.svg" alt="배달주문" loading="lazy">
                             <p data-font="font_14">배달주문</p>
                         </a>
@@ -138,6 +162,7 @@
                 <div class="coupon-list">
                     <p data-font="font_18" data-font-weight="bold">4월에도 맛있게 할인 받자</p>
                     <p data-font="font_13" class="dec-1 mt-2">라떼 3종과 프라페 2종 500원 할인 쿠폰 받아가세요!</p>
+                    <!-- 이미지권장 사이즈 280*117 -->
                     <div class="coupon-img">
                         <img src="./assets/images/main/coupon-img.png" alt="쿠폰이미지" loading="lazy">
                     </div>
@@ -148,8 +173,8 @@
                 </div>
             </div>
 
-            <!-- S : 로그인후 - 쿠폰 -->
-            <div class="main-coupon-list">
+            <!-- S : 로그인후 - 쿠폰 (사용여부 미확정) -->
+            <div class="main-coupon-list" style="display:none;">
                 <div class="container">
                     <div class="flex-bx">
                         <div class="left-bx">
@@ -238,6 +263,7 @@
                     </div>
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
+                            <!-- 이미지권장 사이즈 100*100 -->
                             <div class="swiper-slide">
                                 <a href="javascript:void(0);">
                                     <div class="img-bx">
@@ -280,6 +306,7 @@
                     </div>
                 </div>
                 <div class="bottom-bx">
+                    <!-- 이미지권장 사이즈 26*46 -->
                     <div class="main-item-box">
                         <div class="item-box-top">
                             <div class="beverage-bx">
@@ -425,6 +452,10 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" class="common-flex-btn-bx all-download-btn mt-4">
+                    <p data-font="font_14" data-font-weight="bold" data-color="white">전체 다운로드</p>
+                    <img src="./assets/images/main/download_icon_w.svg" alt="다운로드 아이콘" loading="lazy" class="download-img">
+                </button>
             </div>
         </div>
     </div>

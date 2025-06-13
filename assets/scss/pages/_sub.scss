@@ -20,6 +20,11 @@
         height: 64px;
         background: $color-primary;
 
+        &.membership,
+        &.alert {
+            background: $color-white;
+        }
+
         .container {
             height: 100%;
             @include flex();
@@ -158,11 +163,15 @@
         border: 1px solid $color-gray-e;
         border-radius: var(--border-radius-small);
         background-image: url(../images/main/point-more-btn.svg);
-        @include background($position: center right, $size: 10px 6px);
+        @include background($position: right 24px center, $size: 14px);
     }
 }
 
-.stamp-save-list {
+.stamp-save-list,
+.coupon-view,
+.coupon-register,
+.membership-list,
+.alert-list {
     position: fixed;
     top: 0;
     left: 0;
@@ -213,16 +222,19 @@
             padding: 0 16px;
             border-bottom: 1px solid #F4F4F4;
         }
-        &-body{
+
+        &-body {
             padding: 0 16px;
         }
-        &-item{
+
+        &-item {
             padding: 24px 0;
             border-bottom: 1px solid #F4F4F4;
             display: flex;
             justify-content: space-between;
         }
-        &-right{
+
+        &-right {
             text-align: right;
         }
     }
@@ -233,5 +245,267 @@
         border: 1px solid #E9E8E8;
         background: $color-white;
         border-radius: 88px;
+    }
+}
+
+.view-content {
+    &-header {
+        border-radius: var(--border-radius-small);
+        background: $color-primary;
+        margin: 24px 16px 0;
+
+        .flex-grid-bx {
+            height: 70px;
+            padding: 0 24px;
+        }
+
+        img {
+            width: 94px;
+        }
+
+        .d-day {
+            padding: 4px 8px;
+            @include flex($justify: center);
+            border-radius: var(--content-border-radius);
+            background: rgba($color-white, 0.6);
+            text-transform: uppercase;
+        }
+    }
+
+    &-body {
+        padding: 0 16px;
+
+        .coupon-wrap {
+            background: $color-primary-6;
+            padding: 43px 0 0 0;
+            border-radius: var(--border-radius-small);
+            @include flex($justify: center, $direction: column);
+        }
+
+        .coupun-img {
+            aspect-ratio: 77/77;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+            }
+        }
+
+        .barcode-bx {
+            margin-top: 43px;
+            padding: 24px 0;
+            border-top: 2px dotted #E9E8E8;
+            width: 100%;
+
+            .img {
+                @include flex($justify: center);
+            }
+        }
+    }
+
+    &-footer {
+        margin-top: 40px;
+        background: $color-bg;
+        padding: 24px 16px;
+
+        &.register {
+            margin-top: 161px;
+        }
+
+        &.white{
+            background: $color-white;
+        }
+
+        .info-txt {
+            font-size: 13px;
+            color: #620080;
+            position: relative;
+            padding-left: 10px;
+
+            &::before {
+                content: "-";
+                color: $color-black;
+                width: 1px;
+                height: 1px;
+                position: absolute;
+                top: 0;
+                transform: translateY(-50%);
+                left: 0;
+            }
+
+            &+.info-txt {
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+.register {
+    &-bx {
+        margin: 24px 16px 0;
+    }
+
+    &-content {
+        .pin-input {
+            height: 52px;
+            border-radius: var(--border-radius-small);
+            border: 1px solid #7B00A0;
+            text-align: center;
+            padding: 0 16px;
+            width: 100%;
+
+            &::placeholder {
+                color: #666;
+            }
+        }
+
+        .select-barcode {
+            @include flex($justify: end);
+            position: relative;
+
+            .text-center {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .barcode-scan {
+            @include flex($justify: center);
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: var(--border-radius-small);
+            border: 1px solid #7B00A0;
+            cursor: pointer;
+        }
+    }
+}
+
+//멤버십 안내
+.membership-tab {
+    margin: 24px 16px 0;
+
+    .badge-img {
+        aspect-ratio: 80/80;
+        padding: 24px 16px 0;
+        @include flex($justify: center);
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+        }
+    }
+
+    .my-rating-bx {
+        padding: 20px;
+        border-radius: var(--border-radius-small);
+        border: 1px solid #F4F4F4;
+        margin-bottom: 32px;
+    }
+
+    .my-status {
+
+        .txt-bx {
+            span {
+                display: inline-block;
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .gauge {
+        &-bx {
+            width: 100%;
+            position: relative;
+        }
+
+        &-bar {
+            height: 14px;
+            background-color: #F8F8FA;
+            border-radius: 20px;
+            border: 1px solid #F1F1F3;
+        }
+
+        &-fill {
+            height: 100%;
+            background-color: $color-primary;
+            width: 0%;
+            border-radius: 20px;
+            transition: width .7s ease-in-out;
+        }
+
+        &-marker {
+            position: absolute;
+            top: -13px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 9px solid $color-primary;
+            transform: translateX(-50%);
+            left: 0;
+            opacity: 0;
+            transition: left 1s ease-in-out, opacity 0.5s ease;
+        }
+    }
+
+    .dec-bx{
+        .info-txt {
+            position: relative;
+            padding-left: 10px;
+
+            &::before {
+                content: "-";
+                color: $color-black;
+                width: 1px;
+                height: 1px;
+                position: absolute;
+                top: 0;
+                transform: translateY(-50%);
+                left: 0;
+            }
+
+            &+.info-txt {
+                margin-top: 4px;
+            }
+        }
+        .icon{
+            width: 18px;
+        }
+    }
+}
+
+.alert-tab{
+    .alert-bx{
+        display: flex;
+        align-items: start;
+        gap: 16px;
+        padding: 24px 16px;
+        border-bottom: 1px solid #F9F9FB;
+        .img-bx{
+            min-width: 48px;
+            aspect-ratio: 48/48;
+            @include flex($justify: center);
+            border-radius: 50%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+            }
+        }
+        .time-txt{
+            display: inline-block;
+            padding: 0 8px;
+            border-radius: var(--content-border-radius);
+            background: $color-primary-6;
+            text-align: center;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+        }
     }
 }

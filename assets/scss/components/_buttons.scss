@@ -1,16 +1,24 @@
 .common-flex-btn-bx {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
     cursor: pointer;
 
     &.stamp-list-btn,
-    &.coupon-list-btn {
+    &.coupon-register-btn,
+    &.all-download-btn,
+    &.pick-up-order-btn,
+    &.type-1 {
         width: 100%;
         height: 48px;
         border-radius: var(--border-radius-small);
         background: $color-primary;
         justify-content: center;
+    }
+
+    .download-img{
+        width: 14px;
+        margin-left: 8px;
     }
 
     .back-btn {
@@ -39,7 +47,7 @@
         &.impossible {
             border: 1px solid $color-gray-e;
             background: $color-white;
-            color: rgba($color-black, 0.4);
+            color: #666;
         }
     }
 }

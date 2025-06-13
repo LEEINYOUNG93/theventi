@@ -9,7 +9,7 @@
                 </svg>
             </button>
             <div class="flex-bx">
-                <button type="button" class="sidebar--qr" aria-controls="alert" aria-expanded="false" aria-label="qr버튼">
+                <button type="button" class="sidebar--barcode" aria-controls="alert" aria-expanded="false" aria-label="바코드버튼" data-toggle="popup" data-target="#barcodePopup">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M22.0002 8.66667V3.66667C22.0002 2.75 21.2502 2 20.3335 2H15.3335"
                             stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
@@ -33,6 +33,7 @@
                 </button>
                 <button type="button" class="sidebar--alert" aria-controls="alert" aria-expanded="false"
                     aria-label="알림버튼">
+                    <!-- 알림활성화 svg안의 .active클래스 display:block,none으로 조절 -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path
                             d="M18 18.3699C16.5116 17.4606 15.5814 14.3689 15.5814 12.7322V9.6405C15.5814 6.73069 13.1628 4.54834 10 4.54834C6.83721 4.54834 4.4186 6.73069 4.4186 9.6405V12.914C4.4186 14.5508 3.48837 17.6425 2 18.5518H18V18.3699Z"
@@ -44,7 +45,7 @@
                             stroke-linecap="round" stroke-linejoin="round" />
                         <path
                             d="M22 6C23.1046 6 24 5.10457 24 4C24 2.89543 23.1046 2 22 2C20.8954 2 20 2.89543 20 4C20 5.10457 20.8954 6 22 6Z"
-                            fill="#FF2744" />
+                            fill="#FF2744" class="active"/>
                     </svg>
                 </button>
             </div>
@@ -54,7 +55,7 @@
             <div class="sidebar-header">
                 <div class="container">
                     <a href="./index.html">
-                        <img src="./assets/images/main/logo.svg" alt="더벤티 로고">
+                        <img src="assets/images/main/logo.svg" alt="더벤티 로고">
                     </a>
                     <button type="button" class="sidebar--close" aria-controls="close" aria-expanded="false"
                         aria-label="사이드바 닫기버튼">
@@ -96,19 +97,19 @@
                         <ul class="sidebar_icon_list">
                             <li class="sidebar_icon_item">
                                 <a href="javascript:void(0);" class="stamp-list-btn">
-                                    <img src="./assets/images/main/stamp_icon.png" alt="스탬프">
+                                    <img src="assets/images/main/stamp_icon.png" alt="스탬프">
                                     <p data-font="font_14">스탬프</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
-                                    <img src="./assets/images/main/coupon_icon.png" alt="쿠폰">
+                                <a href="javascript:void(0);" class="coupon-list-btn">
+                                    <img src="assets/images/main/coupon_icon.png" alt="쿠폰">
                                     <p data-font="font_14">쿠폰</p>
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0);">
-                                    <img src="./assets/images/main/badge_icon.png" alt="뱃지">
+                                    <img src="assets/images/main/badge_icon.png" alt="뱃지">
                                     <p data-font="font_14">뱃지</p>
                                 </a>
                             </li>
@@ -120,7 +121,7 @@
                         <li>
                             <a href="javascript:void(0);" class="pickup--open">픽업 주문하기</a>
                         </li>
-                        <li><a href="javascript:void(0);">배달 주문하기</a></li>
+                        <li><a href="javascript:void(0);" class="delivery--open">배달 주문하기</a></li>
                         <li><a href="javascript:void(0);">주문내역</a></li>
                         <li><a href="javascript:void(0);">개인컵 이용내역</a></li>
                         <li><a href="javascript:void(0);">선물하기</a></li>
@@ -182,6 +183,33 @@
                             data-font-weight="bold">취소</button>
                         <button type="button" class="confirm-btn" data-font="font_14" data-font-weight="bold">확인</button>
                     </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="barcodePopup" class="popup">
+    <div class="popup-center-content">
+        <div class="container">
+            <div class="popup-title-bx text-center">
+                <p data-font="font_18" data-font-weight="semibold" class="mt-2">멤버십 바코드</p>
+                <button class="popup-close fix-btn">
+                    <img src="assets/images/main/close-btn-g.svg" alt="팝업 닫기버튼">
+                </button>
+            </div>
+            <div class="popup-bottom-bx mt-6">
+                <div class="barcode-bx">
+                    <div class="img">
+                        <img src="assets/images/main/barcode-img.png" alt="바코드" loading="lazy">
+                    </div>
+                    <div class="number text-center mt-2" data-font="font_14">
+                        12345678910165
+                    </div>
+                </div>
+                <div class="flex-grid-bx use-bx mt-6">
+                    <img src="assets/images/main/phone_icon.svg" alt="핸드폰이미지" loading="lazy">
+                    <p class="color-60" data-font_14>흔들면 멤버십 바코드가 나와요!</p>
+                </div>
             </div>
         </div>
     </div>

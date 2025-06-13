@@ -1,0 +1,346 @@
+<!-- S : 알림내역 -->
+<div class="alert-list">
+    <div class="pickup-list-bx alert">
+        <div class="container">
+            <a href="JavaScript:void(0);" class="back-btn">
+                <div class="common-flex-btn-bx">
+                    <img src="assets/images/main/back_btn.svg" alt="뒤로가기 버튼">
+                    <p data-font="font_18" data-font-weight="medium">멤버십 안내</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="alert-list-content container">
+        <ul class="membership-tab-header" data-tab-group="info">
+            <li data-toggle="tab" data-target="#info1">전체</li>
+            <li data-toggle="tab" data-target="#info2">멤버십</li>
+            <li data-toggle="tab" data-target="#info3">이벤트</li>
+            <li data-toggle="tab" data-target="#info4">주문</li>
+        </ul>
+        <div class="alert-tab-body">
+            <ul class="alert-tab" data-tab-group="info">
+                <li class="alert-tab-item common-tab-item" id="info1">
+                    <!-- 알림내역이 없을경우 노출 -->
+                    <div class="empty-bx column">
+                        <!-- 아이콘이미지 56*56 -->
+                        <div class="empty-img d-flex align-center justify-center">
+                            <img src="assets/images/main/empty_icon.svg" alt="알림내역없음 아이콘" loading="lazy">
+                        </div>
+                        <div class="empty-txt">
+                            <p class="text-center" data-font="font_18" data-font-weight="semibold">알림 내역이 없습니다</p>
+                            <p class="text-center color-60 mt-2" data-font="font_16">새로운 알림이 도착하면 이곳에서<br>
+                                확인하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <!-- 아이콘이미지 48*48 -->
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_1.svg" alt="이벤트아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">여름 이벤트 안내</p>
+                            <p data-font="font_14" class="mt-2 color-60">더벤티 수박 신메뉴와 함께하는 협업플레이어 페스티벌 이벤트가 시작되었습니다.</p>
+                            <span class="time-txt mt-4 color-60">방금 전</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_2.svg" alt="쿠폰아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">쿠폰이 발급되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">신규 회원 가입 축하 쿠폰이 발급되었습니다. 마이페이지에서 확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">1시간 전</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_3.svg" alt="주문아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">주문이 완료되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">아메리카노 외 2개 상품의 주문이 완료되었습니
+                                다. 주문 상세 내역을 확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_4.svg" alt="주문취소아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">주문이 취소되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">아메리카노 외 2개 상품의 주문이 취소되었습니다. 주문 상세 내역을 확인해보세요.
+                            </p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_5.svg" alt="스탬프아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">스탬프가 적립되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">주문하신 상품에 대해 2개의 스탬프가 적립되었습니다. 현재 총 5개의 스탬프를
+                                보유하고
+                                있습니다.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_6.svg" alt="소식아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">더벤티 소식</p>
+                            <p data-font="font_14" class="mt-2 color-60">더벤티가 신규 매장 오픈을 기념하여 다양한 혜택을 준비했습니다. 지금 바로
+                                확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="alert-tab-item common-tab-item" id="info2">
+                    <!-- 알림내역이 없을경우 노출 -->
+                    <div class="empty-bx column">
+                        <!-- 아이콘이미지 56*56 -->
+                        <div class="empty-img d-flex align-center justify-center">
+                            <img src="assets/images/main/empty_icon.svg" alt="알림내역없음 아이콘" loading="lazy">
+                        </div>
+                        <div class="empty-txt">
+                            <p class="text-center" data-font="font_18" data-font-weight="semibold">알림 내역이 없습니다</p>
+                            <p class="text-center color-60 mt-2" data-font="font_16">새로운 알림이 도착하면 이곳에서<br>
+                                확인하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <!-- 아이콘이미지 48*48 -->
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_1.svg" alt="이벤트아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">여름 이벤트 안내</p>
+                            <p data-font="font_14" class="mt-2 color-60">더벤티 수박 신메뉴와 함께하는 협업플레이어 페스티벌 이벤트가 시작되었습니다.</p>
+                            <span class="time-txt mt-4 color-60">방금 전</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_2.svg" alt="쿠폰아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">쿠폰이 발급되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">신규 회원 가입 축하 쿠폰이 발급되었습니다. 마이페이지에서 확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">1시간 전</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_3.svg" alt="주문아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">주문이 완료되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">아메리카노 외 2개 상품의 주문이 완료되었습니
+                                다. 주문 상세 내역을 확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_4.svg" alt="주문취소아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">주문이 취소되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">아메리카노 외 2개 상품의 주문이 취소되었습니다. 주문 상세 내역을 확인해보세요.
+                            </p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_5.svg" alt="스탬프아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">스탬프가 적립되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">주문하신 상품에 대해 2개의 스탬프가 적립되었습니다. 현재 총 5개의 스탬프를
+                                보유하고
+                                있습니다.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_6.svg" alt="소식아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">더벤티 소식</p>
+                            <p data-font="font_14" class="mt-2 color-60">더벤티가 신규 매장 오픈을 기념하여 다양한 혜택을 준비했습니다. 지금 바로
+                                확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="alert-tab-item common-tab-item" id="info3">
+                    <!-- 알림내역이 없을경우 노출 -->
+                    <div class="empty-bx column">
+                        <!-- 아이콘이미지 56*56 -->
+                        <div class="empty-img d-flex align-center justify-center">
+                            <img src="assets/images/main/empty_icon.svg" alt="알림내역없음 아이콘" loading="lazy">
+                        </div>
+                        <div class="empty-txt">
+                            <p class="text-center" data-font="font_18" data-font-weight="semibold">알림 내역이 없습니다</p>
+                            <p class="text-center color-60 mt-2" data-font="font_16">새로운 알림이 도착하면 이곳에서<br>
+                                확인하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <!-- 아이콘이미지 48*48 -->
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_1.svg" alt="이벤트아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">여름 이벤트 안내</p>
+                            <p data-font="font_14" class="mt-2 color-60">더벤티 수박 신메뉴와 함께하는 협업플레이어 페스티벌 이벤트가 시작되었습니다.</p>
+                            <span class="time-txt mt-4 color-60">방금 전</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_2.svg" alt="쿠폰아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">쿠폰이 발급되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">신규 회원 가입 축하 쿠폰이 발급되었습니다. 마이페이지에서 확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">1시간 전</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_3.svg" alt="주문아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">주문이 완료되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">아메리카노 외 2개 상품의 주문이 완료되었습니
+                                다. 주문 상세 내역을 확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_4.svg" alt="주문취소아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">주문이 취소되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">아메리카노 외 2개 상품의 주문이 취소되었습니다. 주문 상세 내역을 확인해보세요.
+                            </p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_5.svg" alt="스탬프아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">스탬프가 적립되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">주문하신 상품에 대해 2개의 스탬프가 적립되었습니다. 현재 총 5개의 스탬프를
+                                보유하고
+                                있습니다.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_6.svg" alt="소식아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">더벤티 소식</p>
+                            <p data-font="font_14" class="mt-2 color-60">더벤티가 신규 매장 오픈을 기념하여 다양한 혜택을 준비했습니다. 지금 바로
+                                확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="alert-tab-item common-tab-item" id="info4">
+                    <!-- 알림내역이 없을경우 노출 -->
+                    <div class="empty-bx column">
+                        <!-- 아이콘이미지 56*56 -->
+                        <div class="empty-img d-flex align-center justify-center">
+                            <img src="assets/images/main/empty_icon.svg" alt="알림내역없음 아이콘" loading="lazy">
+                        </div>
+                        <div class="empty-txt">
+                            <p class="text-center" data-font="font_18" data-font-weight="semibold">알림 내역이 없습니다</p>
+                            <p class="text-center color-60 mt-2" data-font="font_16">새로운 알림이 도착하면 이곳에서<br>
+                                확인하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <!-- 아이콘이미지 48*48 -->
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_1.svg" alt="이벤트아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">여름 이벤트 안내</p>
+                            <p data-font="font_14" class="mt-2 color-60">더벤티 수박 신메뉴와 함께하는 협업플레이어 페스티벌 이벤트가 시작되었습니다.</p>
+                            <span class="time-txt mt-4 color-60">방금 전</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_2.svg" alt="쿠폰아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">쿠폰이 발급되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">신규 회원 가입 축하 쿠폰이 발급되었습니다. 마이페이지에서 확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">1시간 전</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_3.svg" alt="주문아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">주문이 완료되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">아메리카노 외 2개 상품의 주문이 완료되었습니
+                                다. 주문 상세 내역을 확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_4.svg" alt="주문취소아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">주문이 취소되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">아메리카노 외 2개 상품의 주문이 취소되었습니다. 주문 상세 내역을 확인해보세요.
+                            </p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_5.svg" alt="스탬프아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">스탬프가 적립되었습니다</p>
+                            <p data-font="font_14" class="mt-2 color-60">주문하신 상품에 대해 2개의 스탬프가 적립되었습니다. 현재 총 5개의 스탬프를
+                                보유하고
+                                있습니다.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                    <div class="alert-bx">
+                        <div class="img-bx">
+                            <img src="assets/images/main/alert_icon_6.svg" alt="소식아이콘" loading="lazy">
+                        </div>
+                        <div class="text-bx">
+                            <p data-font-weight="semibold">더벤티 소식</p>
+                            <p data-font="font_14" class="mt-2 color-60">더벤티가 신규 매장 오픈을 기념하여 다양한 혜택을 준비했습니다. 지금 바로
+                                확인해보세요.</p>
+                            <span class="time-txt mt-4 color-60">어제</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- E : 알림내역 -->

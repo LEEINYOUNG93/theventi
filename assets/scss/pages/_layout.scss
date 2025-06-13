@@ -14,7 +14,7 @@
 
             .sidebar--open,
             .sidebar--alert,
-            .sidebar--qr {
+            .sidebar--barcode {
                 color: $color-primary;
             }
         }
@@ -42,7 +42,7 @@
 
     .sidebar--open,
     .sidebar--alert,
-    .sidebar--qr {
+    .sidebar--barcode {
         color: $color-white;
     }
 }
@@ -107,7 +107,7 @@
         padding: var(--content-padding);
     }
 
-    .btn-bx{
+    .btn-bx {
         display: flex;
         gap: 8px;
     }
@@ -293,6 +293,7 @@
                 border-radius: var(--border-radius-small);
                 border: 1px solid #7B00A0;
                 font-weight: bold;
+                margin-top: 40px;
             }
         }
     }
@@ -342,12 +343,14 @@
 
     &-icon-content-list {
         margin-top: var(--common-gap);
-        .scroll-bx{
+
+        .scroll-bx {
             overflow-y: auto;
             max-height: 75vh;
 
             &::-webkit-scrollbar {
-                width: 2px;
+                width: 0;
+                background: transparent;
             }
 
             &::-webkit-scrollbar-thumb {
@@ -407,22 +410,32 @@
 }
 
 /* 쿠폰 탭 */
-.coupon-tab{
-    &-header{
+.coupon-tab,
+.membership-tab,
+.alert-tab {
+    &-header {
         @include flex($justify: space-between);
         margin: 16px 0;
         border-bottom: 1px solid #E9E8E8;
-        li{
+
+        li {
             padding: 16px;
             font-size: 15px;
-            color: rgba($color-black, 0.6);
+            color: #666;
             position: relative;
-            &.active{
-                &::after{
+            transition: all .3s $animation-timing;
+            cursor: pointer;
+
+            &.active {
+                color: $color-black;
+                font-weight: 500;
+
+                &::after {
                     opacity: 1;
                 }
             }
-            &::after{
+
+            &::after {
                 content: "";
                 width: 100%;
                 height: 2px;
@@ -436,24 +449,122 @@
             }
         }
     }
-    &-body{
+
+    &-body {
         margin-bottom: 28px;
     }
-    &-content{
+
+    &-item {
+        transition: all .3s $animation-timing;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &-content {
         padding: 19px 16px;
         border: 1px solid #F4F4F4;
         border-radius: var(--border-radius-small);
         background: $color-primary-6;
-        &+.coupon-tab-content{
+        cursor: pointer;
+
+        &+.coupon-tab-content {
             margin-top: 16px;
         }
     }
-    &-info{
+
+    &-info {
         @include flex($align: end, $justify: space-between);
-        .info{
+
+        .info {
             font-size: 14px;
         }
-        .d-day{
+
+        .d-day {
+            padding: 4px 8px;
+            @include flex($justify: center);
+            border-radius: var(--content-border-radius);
+            background: #E9E8E8;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+.badge-content {
+    &-bx {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 7px;
+
+        li {
+            width: calc(33.3333% - 5px);
+        }
+    }
+
+    &-img {
+        aspect-ratio: 88/88;
+        @include flex($justify: center);
+        border-radius: 50%;
+        background: $color-white;
+        border: 1px solid #F4F4F4;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+        }
+    }
+}
+
+.rating-txt {
+    &.welcome{
+
+    }
+    &.silver{
+        
+    }
+    &.gold {
+        color: #B28E81;
+    }
+    &.vip{
+        
+    }
+}
+
+.barcode-bx {
+    padding: 24px;
+    width: 100%;
+    border-radius: var(--border-radius-small);
+    background: $color-bg;
+
+    .img {
+        @include flex($justify: center);
+    }
+}
+
+.benefit {
+    &-item {
+        margin-top: 16px;
+        background: $color-bg;
+        padding: 16px 21px;
+        border-radius: var(--border-radius-small);
+        border: 1px solid #F4F4F4;
+        cursor: pointer;
+    }
+
+    &-info {
+        @include flex($align: end, $justify: space-between);  
+
+        .info {
+            font-size: 14px;
+        }
+
+        .status {
             padding: 4px 8px;
             @include flex($justify: center);
             border-radius: var(--content-border-radius);
@@ -499,8 +610,12 @@
         }
 
         .icon-bx {
+            aspect-ratio: 56/56;
+
             img {
-                aspect-ratio: 1/1;
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
             }
         }
     }
